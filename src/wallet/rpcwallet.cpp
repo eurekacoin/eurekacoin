@@ -154,14 +154,14 @@ static UniValue getnewaddress(const JSONRPCRequest& request)
     if (request.fHelp || request.params.size() > 2)
         throw std::runtime_error(
             "getnewaddress ( \"label\" \"address_type\" )\n"
-            "\nReturns a new Qtum address for receiving payments.\n"
+            "\nReturns a new EurekaCoin address for receiving payments.\n"
             "If 'label' is specified, it is added to the address book \n"
             "so payments received with the address will be associated with 'label'.\n"
             "\nArguments:\n"
             "1. \"label\"          (string, optional) The label name for the address to be linked to. If not provided, the default label \"\" is used. It can also be set to the empty string \"\" to represent the default label. The label does not need to exist, it will be created if there is no label by the given name.\n"
             "2. \"address_type\"   (string, optional) The address type to use. Options are \"legacy\", \"p2sh-segwit\", and \"bech32\". Default is set by -addresstype.\n"
             "\nResult:\n"
-            "\"address\"    (string) The new qtum address\n"
+            "\"address\"    (string) The new eurekacoin address\n"
             "\nExamples:\n"
             + HelpExampleCli("getnewaddress", "")
             + HelpExampleRpc("getnewaddress", "")
@@ -223,19 +223,19 @@ static UniValue getaccountaddress(const JSONRPCRequest& request)
 
     if (!IsDeprecatedRPCEnabled("accounts")) {
         if (request.fHelp) {
-            throw std::runtime_error("getaccountaddress (Deprecated, will be removed in V0.18. To use this command, start qtumd with -deprecatedrpc=accounts)");
+            throw std::runtime_error("getaccountaddress (Deprecated, will be removed in V0.18. To use this command, start eurekacoind with -deprecatedrpc=accounts)");
         }
-        throw JSONRPCError(RPC_METHOD_DEPRECATED, "getaccountaddress is deprecated and will be removed in V0.18. To use this command, start qtumd with -deprecatedrpc=accounts.");
+        throw JSONRPCError(RPC_METHOD_DEPRECATED, "getaccountaddress is deprecated and will be removed in V0.18. To use this command, start eurekacoind with -deprecatedrpc=accounts.");
     }
 
     if (request.fHelp || request.params.size() != 1)
         throw std::runtime_error(
             "getaccountaddress \"account\"\n"
-            "\n\nDEPRECATED. Returns the current Qtum address for receiving payments to this account.\n"
+            "\n\nDEPRECATED. Returns the current EurekaCoin address for receiving payments to this account.\n"
             "\nArguments:\n"
             "1. \"account\"       (string, required) The account for the address. It can also be set to the empty string \"\" to represent the default account. The account does not need to exist, it will be created and a new address created  if there is no account by the given name.\n"
             "\nResult:\n"
-            "\"address\"          (string) The account qtum address\n"
+            "\"address\"          (string) The account eurekacoin address\n"
             "\nExamples:\n"
             + HelpExampleCli("getaccountaddress", "")
             + HelpExampleCli("getaccountaddress", "\"\"")
@@ -267,7 +267,7 @@ static UniValue getrawchangeaddress(const JSONRPCRequest& request)
     if (request.fHelp || request.params.size() > 1)
         throw std::runtime_error(
             "getrawchangeaddress ( \"address_type\" )\n"
-            "\nReturns a new Qtum address, for receiving change.\n"
+            "\nReturns a new EurekaCoin address, for receiving change.\n"
             "This is for use with raw transactions, NOT normal use.\n"
             "\nArguments:\n"
             "1. \"address_type\"           (string, optional) The address type to use. Options are \"legacy\", \"p2sh-segwit\", and \"bech32\". Default is set by -changetype.\n"
@@ -320,9 +320,9 @@ static UniValue setlabel(const JSONRPCRequest& request)
 
     if (!IsDeprecatedRPCEnabled("accounts") && request.strMethod == "setaccount") {
         if (request.fHelp) {
-            throw std::runtime_error("setaccount (Deprecated, will be removed in V0.18. To use this command, start qtumd with -deprecatedrpc=accounts)");
+            throw std::runtime_error("setaccount (Deprecated, will be removed in V0.18. To use this command, start eurekacoind with -deprecatedrpc=accounts)");
         }
-        throw JSONRPCError(RPC_METHOD_DEPRECATED, "setaccount is deprecated and will be removed in V0.18. To use this command, start qtumd with -deprecatedrpc=accounts.");
+        throw JSONRPCError(RPC_METHOD_DEPRECATED, "setaccount is deprecated and will be removed in V0.18. To use this command, start eurekacoind with -deprecatedrpc=accounts.");
     }
 
     if (request.fHelp || request.params.size() != 2)
@@ -330,7 +330,7 @@ static UniValue setlabel(const JSONRPCRequest& request)
             "setlabel \"address\" \"label\"\n"
             "\nSets the label associated with the given address.\n"
             "\nArguments:\n"
-            "1. \"address\"         (string, required) The qtum address to be associated with a label.\n"
+            "1. \"address\"         (string, required) The eurekacoin address to be associated with a label.\n"
             "2. \"label\"           (string, required) The label to assign to the address.\n"
             "\nExamples:\n"
             + HelpExampleCli("setlabel", "\"QD1ZrZNe3JUo7ZycKEYQQiQAWd9y54F4XX\" \"tabby\"")
@@ -341,7 +341,7 @@ static UniValue setlabel(const JSONRPCRequest& request)
 
     CTxDestination dest = DecodeDestination(request.params[0].get_str());
     if (!IsValidDestination(dest)) {
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Qtum address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid EurekaCoin address");
     }
 
     std::string old_label = pwallet->mapAddressBook[dest].name;
@@ -386,9 +386,9 @@ static UniValue getaccount(const JSONRPCRequest& request)
 
     if (!IsDeprecatedRPCEnabled("accounts")) {
         if (request.fHelp) {
-            throw std::runtime_error("getaccount (Deprecated, will be removed in V0.18. To use this command, start qtumd with -deprecatedrpc=accounts)");
+            throw std::runtime_error("getaccount (Deprecated, will be removed in V0.18. To use this command, start eurekacoind with -deprecatedrpc=accounts)");
         }
-        throw JSONRPCError(RPC_METHOD_DEPRECATED, "getaccount is deprecated and will be removed in V0.18. To use this command, start qtumd with -deprecatedrpc=accounts.");
+        throw JSONRPCError(RPC_METHOD_DEPRECATED, "getaccount is deprecated and will be removed in V0.18. To use this command, start eurekacoind with -deprecatedrpc=accounts.");
     }
 
     if (request.fHelp || request.params.size() != 1)
@@ -396,7 +396,7 @@ static UniValue getaccount(const JSONRPCRequest& request)
             "getaccount \"address\"\n"
             "\nDEPRECATED. Returns the account associated with the given address.\n"
             "\nArguments:\n"
-            "1. \"address\"         (string, required) The qtum address for account lookup.\n"
+            "1. \"address\"         (string, required) The eurekacoin address for account lookup.\n"
             "\nResult:\n"
             "\"accountname\"        (string) the account address\n"
             "\nExamples:\n"
@@ -408,7 +408,7 @@ static UniValue getaccount(const JSONRPCRequest& request)
 
     CTxDestination dest = DecodeDestination(request.params[0].get_str());
     if (!IsValidDestination(dest)) {
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Qtum address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid EurekaCoin address");
     }
 
     std::string strAccount;
@@ -431,9 +431,9 @@ static UniValue getaddressesbyaccount(const JSONRPCRequest& request)
 
     if (!IsDeprecatedRPCEnabled("accounts")) {
         if (request.fHelp) {
-            throw std::runtime_error("getaddressbyaccount (Deprecated, will be removed in V0.18. To use this command, start qtumd with -deprecatedrpc=accounts)");
+            throw std::runtime_error("getaddressbyaccount (Deprecated, will be removed in V0.18. To use this command, start eurekacoind with -deprecatedrpc=accounts)");
         }
-        throw JSONRPCError(RPC_METHOD_DEPRECATED, "getaddressesbyaccount is deprecated and will be removed in V0.18. To use this command, start qtumd with -deprecatedrpc=accounts.");
+        throw JSONRPCError(RPC_METHOD_DEPRECATED, "getaddressesbyaccount is deprecated and will be removed in V0.18. To use this command, start eurekacoind with -deprecatedrpc=accounts.");
     }
 
     if (request.fHelp || request.params.size() != 1)
@@ -444,7 +444,7 @@ static UniValue getaddressesbyaccount(const JSONRPCRequest& request)
             "1. \"account\"        (string, required) The account name.\n"
             "\nResult:\n"
             "[                     (json array of string)\n"
-            "  \"address\"         (string) a qtum address associated with the given account\n"
+            "  \"address\"         (string) a eurekacoin address associated with the given account\n"
             "  ,...\n"
             "]\n"
             "\nExamples:\n"
@@ -529,7 +529,7 @@ static UniValue sendtoaddress(const JSONRPCRequest& request)
             "\nSend an amount to a given address.\n"
             + HelpRequiringPassphrase(pwallet) +
             "\nArguments:\n"
-            "1. \"address\"            (string, required) The qtum address to send to.\n"
+            "1. \"address\"            (string, required) The eurekacoin address to send to.\n"
             "2. \"amount\"             (numeric or string, required) The amount in " + CURRENCY_UNIT + " to send. eg 0.1\n"
             "3. \"comment\"            (string, optional) A comment used to store what the transaction is for. \n"
             "                             This is not part of the transaction, just kept in your wallet.\n"
@@ -537,7 +537,7 @@ static UniValue sendtoaddress(const JSONRPCRequest& request)
             "                             to which you're sending the transaction. This is not part of the \n"
             "                             transaction, just kept in your wallet.\n"
             "5. subtractfeefromamount  (boolean, optional, default=false) The fee will be deducted from the amount being sent.\n"
-            "                             The recipient will receive less qtums than you enter in the amount field.\n"
+            "                             The recipient will receive less eurekacoins than you enter in the amount field.\n"
             "6. replaceable            (boolean, optional) Allow this transaction to be replaced by a transaction with higher fees via BIP 125\n"
             "7. conf_target            (numeric, optional) Confirmation target (in blocks)\n"
             "8. \"estimate_mode\"      (string, optional, default=UNSET) The fee estimate mode, must be one of:\n"
@@ -565,7 +565,7 @@ static UniValue sendtoaddress(const JSONRPCRequest& request)
 
     CTxDestination dest = DecodeDestination(request.params[0].get_str());
     if (!IsValidDestination(dest)) {
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Qtum address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid EurekaCoin address");
     }
 
     // Amount
@@ -606,7 +606,7 @@ static UniValue sendtoaddress(const JSONRPCRequest& request)
     if (request.params.size() > 8 && !request.params[8].isNull()){
     senderAddress = DecodeDestination(request.params[8].get_str());
         if (!IsValidDestination(senderAddress))
-            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Qtum address to send from");
+            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid EurekaCoin address to send from");
         else
             fHasSender=true;
     }
@@ -665,9 +665,9 @@ static UniValue createcontract(const JSONRPCRequest& request){
     }
 
     LOCK2(cs_main, pwallet->cs_wallet);
-    QtumDGP qtumDGP(globalState.get(), fGettingValuesDGP);
-    uint64_t blockGasLimit = qtumDGP.getBlockGasLimit(chainActive.Height());
-    uint64_t minGasPrice = CAmount(qtumDGP.getMinGasPrice(chainActive.Height()));
+    EurekaCoinDGP eurekacoinDGP(globalState.get(), fGettingValuesDGP);
+    uint64_t blockGasLimit = eurekacoinDGP.getBlockGasLimit(chainActive.Height());
+    uint64_t minGasPrice = CAmount(eurekacoinDGP.getMinGasPrice(chainActive.Height()));
     CAmount nGasPrice = (minGasPrice>DEFAULT_GAS_PRICE)?minGasPrice:DEFAULT_GAS_PRICE;
 
     if (request.fHelp || request.params.size() < 1 || request.params.size() > 6)
@@ -678,7 +678,7 @@ static UniValue createcontract(const JSONRPCRequest& request){
                 "\nArguments:\n"
                 "1. \"bytecode\"  (string, required) contract bytcode.\n"
                 "2. gasLimit  (numeric or string, optional) gasLimit, default: "+i64tostr(DEFAULT_GAS_LIMIT_OP_CREATE)+", max: "+i64tostr(blockGasLimit)+"\n"
-                "3. gasPrice  (numeric or string, optional) gasPrice QTUM price per gas unit, default: "+FormatMoney(nGasPrice)+", min:"+FormatMoney(minGasPrice)+"\n"
+                "3. gasPrice  (numeric or string, optional) gasPrice EUREKACOIN price per gas unit, default: "+FormatMoney(nGasPrice)+", min:"+FormatMoney(minGasPrice)+"\n"
                 "4. \"senderaddress\" (string, optional) The quantum address that will be used to create the contract.\n"
                 "5. \"broadcast\" (bool, optional, default=true) Whether to broadcast the transaction or not.\n"
                 "6. \"changeToSender\" (bool, optional, default=true) Return the change to the sender.\n"
@@ -729,7 +729,7 @@ static UniValue createcontract(const JSONRPCRequest& request){
     if (request.params.size() > 3){
         senderAddress = DecodeDestination(request.params[3].get_str());
         if (!IsValidDestination(senderAddress))
-            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Qtum address to send from");
+            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid EurekaCoin address to send from");
         if (!IsValidContractSenderAddress(senderAddress))
         	throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid contract sender address. Only P2PK and P2PKH allowed");
         else
@@ -868,9 +868,9 @@ static UniValue sendtocontract(const JSONRPCRequest& request){
     }
 
     LOCK2(cs_main, pwallet->cs_wallet);
-    QtumDGP qtumDGP(globalState.get(), fGettingValuesDGP);
-    uint64_t blockGasLimit = qtumDGP.getBlockGasLimit(chainActive.Height());
-    uint64_t minGasPrice = CAmount(qtumDGP.getMinGasPrice(chainActive.Height()));
+    EurekaCoinDGP eurekacoinDGP(globalState.get(), fGettingValuesDGP);
+    uint64_t blockGasLimit = eurekacoinDGP.getBlockGasLimit(chainActive.Height());
+    uint64_t minGasPrice = CAmount(eurekacoinDGP.getMinGasPrice(chainActive.Height()));
     CAmount nGasPrice = (minGasPrice>DEFAULT_GAS_PRICE)?minGasPrice:DEFAULT_GAS_PRICE;
 
     if (request.fHelp || request.params.size() < 2 || request.params.size() > 8)
@@ -883,7 +883,7 @@ static UniValue sendtocontract(const JSONRPCRequest& request){
                 "2. \"datahex\"  (string, required) data to send.\n"
                 "3. \"amount\"      (numeric or string, optional) The amount in " + CURRENCY_UNIT + " to send. eg 0.1, default: 0\n"
                 "4. gasLimit  (numeric or string, optional) gasLimit, default: "+i64tostr(DEFAULT_GAS_LIMIT_OP_SEND)+", max: "+i64tostr(blockGasLimit)+"\n"
-                "5. gasPrice  (numeric or string, optional) gasPrice Qtum price per gas unit, default: "+FormatMoney(nGasPrice)+", min:"+FormatMoney(minGasPrice)+"\n"
+                "5. gasPrice  (numeric or string, optional) gasPrice EurekaCoin price per gas unit, default: "+FormatMoney(nGasPrice)+", min:"+FormatMoney(minGasPrice)+"\n"
                 "6. \"senderaddress\" (string, optional) The quantum address that will be used as sender.\n"
                 "7. \"broadcast\" (bool, optional, default=true) Whether to broadcast the transaction or not.\n"
                 "8. \"changeToSender\" (bool, optional, default=true) Return the change to the sender.\n"
@@ -947,7 +947,7 @@ static UniValue sendtocontract(const JSONRPCRequest& request){
     if (request.params.size() > 5){
         senderAddress = DecodeDestination(request.params[5].get_str());
         if (!IsValidDestination(senderAddress))
-            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Qtum address to send from");
+            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid EurekaCoin address to send from");
         if (!IsValidContractSenderAddress(senderAddress))
             throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid contract sender address. Only P2PK and P2PKH allowed");
         else
@@ -1082,7 +1082,7 @@ static UniValue listaddressgroupings(const JSONRPCRequest& request)
             "[\n"
             "  [\n"
             "    [\n"
-            "      \"address\",            (string) The qtum address\n"
+            "      \"address\",            (string) The eurekacoin address\n"
             "      amount,                 (numeric) The amount in " + CURRENCY_UNIT + "\n"
             "      \"label\"               (string, optional) The label\n"
             "    ]\n"
@@ -1137,7 +1137,7 @@ static UniValue signmessage(const JSONRPCRequest& request)
             "\nSign a message with the private key of an address"
             + HelpRequiringPassphrase(pwallet) + "\n"
             "\nArguments:\n"
-            "1. \"address\"         (string, required) The qtum address to use for the private key.\n"
+            "1. \"address\"         (string, required) The eurekacoin address to use for the private key.\n"
             "2. \"message\"         (string, required) The message to create a signature of.\n"
             "\nResult:\n"
             "\"signature\"          (string) The signature of the message encoded in base 64\n"
@@ -1199,7 +1199,7 @@ static UniValue getreceivedbyaddress(const JSONRPCRequest& request)
             "getreceivedbyaddress \"address\" ( minconf )\n"
             "\nReturns the total amount received by the given address in transactions with at least minconf confirmations.\n"
             "\nArguments:\n"
-            "1. \"address\"         (string, required) The qtum address for transactions.\n"
+            "1. \"address\"         (string, required) The eurekacoin address for transactions.\n"
             "2. minconf             (numeric, optional, default=1) Only include transactions confirmed at least this many times.\n"
             "\nResult:\n"
             "amount   (numeric) The total amount in " + CURRENCY_UNIT + " received at this address.\n"
@@ -1223,7 +1223,7 @@ static UniValue getreceivedbyaddress(const JSONRPCRequest& request)
     // Bitcoin address
     CTxDestination dest = DecodeDestination(request.params[0].get_str());
     if (!IsValidDestination(dest)) {
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Qtum address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid EurekaCoin address");
     }
     CScript scriptPubKey = GetScriptForDestination(dest);
     if (!IsMine(*pwallet, scriptPubKey)) {
@@ -1263,9 +1263,9 @@ static UniValue getreceivedbylabel(const JSONRPCRequest& request)
 
     if (!IsDeprecatedRPCEnabled("accounts") && request.strMethod == "getreceivedbyaccount") {
         if (request.fHelp) {
-            throw std::runtime_error("getreceivedbyaccount (Deprecated, will be removed in V0.18. To use this command, start qtumd with -deprecatedrpc=accounts)");
+            throw std::runtime_error("getreceivedbyaccount (Deprecated, will be removed in V0.18. To use this command, start eurekacoind with -deprecatedrpc=accounts)");
         }
-        throw JSONRPCError(RPC_METHOD_DEPRECATED, "getreceivedbyaccount is deprecated and will be removed in V0.18. To use this command, start qtumd with -deprecatedrpc=accounts.");
+        throw JSONRPCError(RPC_METHOD_DEPRECATED, "getreceivedbyaccount is deprecated and will be removed in V0.18. To use this command, start eurekacoind with -deprecatedrpc=accounts.");
     }
 
     if (request.fHelp || request.params.size() < 1 || request.params.size() > 2)
@@ -1345,7 +1345,7 @@ static UniValue getbalance(const JSONRPCRequest& request)
             "The server total may be different to the balance in the default \"\" account.\n"
             "\nArguments:\n"
             "1. \"account\"         (string, optional) DEPRECATED. This argument will be removed in V0.18. \n"
-            "                     To use this deprecated argument, start qtumd with -deprecatedrpc=accounts. The account string may be given as a\n"
+            "                     To use this deprecated argument, start eurekacoind with -deprecatedrpc=accounts. The account string may be given as a\n"
             "                     specific account name to find the balance associated with wallet keys in\n"
             "                     a named account, or as the empty string (\"\") to find the balance\n"
             "                     associated with wallet keys not in any named account, or as \"*\" to find\n"
@@ -1451,9 +1451,9 @@ static UniValue movecmd(const JSONRPCRequest& request)
 
     if (!IsDeprecatedRPCEnabled("accounts")) {
         if (request.fHelp) {
-            throw std::runtime_error("move (Deprecated, will be removed in V0.18. To use this command, start qtumd with -deprecatedrpc=accounts)");
+            throw std::runtime_error("move (Deprecated, will be removed in V0.18. To use this command, start eurekacoind with -deprecatedrpc=accounts)");
         }
-        throw JSONRPCError(RPC_METHOD_DEPRECATED, "move is deprecated and will be removed in V0.18. To use this command, start qtumd with -deprecatedrpc=accounts.");
+        throw JSONRPCError(RPC_METHOD_DEPRECATED, "move is deprecated and will be removed in V0.18. To use this command, start eurekacoind with -deprecatedrpc=accounts.");
     }
 
     if (request.fHelp || request.params.size() < 3 || request.params.size() > 5)
@@ -1510,23 +1510,23 @@ static UniValue sendfrom(const JSONRPCRequest& request)
 
     if (!IsDeprecatedRPCEnabled("accounts")) {
         if (request.fHelp) {
-            throw std::runtime_error("sendfrom (Deprecated, will be removed in V0.18. To use this command, start qtumd with -deprecatedrpc=accounts)");
+            throw std::runtime_error("sendfrom (Deprecated, will be removed in V0.18. To use this command, start eurekacoind with -deprecatedrpc=accounts)");
         }
-        throw JSONRPCError(RPC_METHOD_DEPRECATED, "sendfrom is deprecated and will be removed in V0.18. To use this command, start qtumd with -deprecatedrpc=accounts.");
+        throw JSONRPCError(RPC_METHOD_DEPRECATED, "sendfrom is deprecated and will be removed in V0.18. To use this command, start eurekacoind with -deprecatedrpc=accounts.");
     }
 
 
     if (request.fHelp || request.params.size() < 3 || request.params.size() > 6)
         throw std::runtime_error(
             "sendfrom \"fromaccount\" \"toaddress\" amount ( minconf \"comment\" \"comment_to\" )\n"
-            "\nDEPRECATED (use sendtoaddress). Sent an amount from an account to a qtum address."
+            "\nDEPRECATED (use sendtoaddress). Sent an amount from an account to a eurekacoin address."
             + HelpRequiringPassphrase(pwallet) + "\n"
             "\nArguments:\n"
             "1. \"fromaccount\"       (string, required) The name of the account to send funds from. May be the default account using \"\".\n"
             "                       Specifying an account does not influence coin selection, but it does associate the newly created\n"
             "                       transaction with the account, so the account's balance computation and transaction history can reflect\n"
             "                       the spend.\n"
-            "2. \"toaddress\"         (string, required) The qtum address to send funds to.\n"
+            "2. \"toaddress\"         (string, required) The eurekacoin address to send funds to.\n"
             "3. amount                (numeric or string, required) The amount in " + CURRENCY_UNIT + " (transaction fee is added on top).\n"
             "4. minconf               (numeric, optional, default=1) Only use funds with at least this many confirmations.\n"
             "5. \"comment\"           (string, optional) A comment used to store what the transaction is for. \n"
@@ -1554,7 +1554,7 @@ static UniValue sendfrom(const JSONRPCRequest& request)
     std::string strAccount = LabelFromValue(request.params[0]);
     CTxDestination dest = DecodeDestination(request.params[1].get_str());
     if (!IsValidDestination(dest)) {
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Qtum address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid EurekaCoin address");
     }
     CAmount nAmount = AmountFromValue(request.params[2]);
     if (nAmount <= 0)
@@ -1596,20 +1596,20 @@ static UniValue sendmany(const JSONRPCRequest& request)
         help_text = "sendmany \"\" {\"address\":amount,...} ( minconf \"comment\" [\"address\",...] replaceable conf_target \"estimate_mode\")\n"
             "\nSend multiple times. Amounts are double-precision floating point numbers.\n"
             "Note that the \"fromaccount\" argument has been removed in V0.17. To use this RPC with a \"fromaccount\" argument, restart\n"
-            "qtumd with -deprecatedrpc=accounts\n"
+            "eurekacoind with -deprecatedrpc=accounts\n"
             + HelpRequiringPassphrase(pwallet) + "\n"
             "\nArguments:\n"
             "1. \"dummy\"               (string, required) Must be set to \"\" for backwards compatibility.\n"
             "2. \"amounts\"             (string, required) A json object with addresses and amounts\n"
             "    {\n"
-            "      \"address\":amount   (numeric or string) The qtum address is the key, the numeric amount (can be string) in " + CURRENCY_UNIT + " is the value\n"
+            "      \"address\":amount   (numeric or string) The eurekacoin address is the key, the numeric amount (can be string) in " + CURRENCY_UNIT + " is the value\n"
             "      ,...\n"
             "    }\n"
             "3. minconf                 (numeric, optional, default=1) Only use the balance confirmed at least this many times.\n"
             "4. \"comment\"             (string, optional) A comment\n"
             "5. subtractfeefrom         (array, optional) A json array with addresses.\n"
             "                           The fee will be equally deducted from the amount of each selected address.\n"
-            "                           Those recipients will receive less qtums than you enter in their corresponding amount field.\n"
+            "                           Those recipients will receive less eurekacoins than you enter in their corresponding amount field.\n"
             "                           If no addresses are specified here, the sender pays the fee.\n"
             "    [\n"
             "      \"address\"          (string) Subtract fee from this address\n"
@@ -1641,14 +1641,14 @@ static UniValue sendmany(const JSONRPCRequest& request)
             "1. \"fromaccount\"         (string, required) DEPRECATED. The account to send the funds from. Should be \"\" for the default account\n"
             "2. \"amounts\"             (string, required) A json object with addresses and amounts\n"
             "    {\n"
-            "      \"address\":amount   (numeric or string) The qtum address is the key, the numeric amount (can be string) in " + CURRENCY_UNIT + " is the value\n"
+            "      \"address\":amount   (numeric or string) The eurekacoin address is the key, the numeric amount (can be string) in " + CURRENCY_UNIT + " is the value\n"
             "      ,...\n"
             "    }\n"
             "3. minconf                 (numeric, optional, default=1) Only use the balance confirmed at least this many times.\n"
             "4. \"comment\"             (string, optional) A comment\n"
             "5. subtractfeefrom         (array, optional) A json array with addresses.\n"
             "                           The fee will be equally deducted from the amount of each selected address.\n"
-            "                           Those recipients will receive less qtums than you enter in their corresponding amount field.\n"
+            "                           Those recipients will receive less eurekacoins than you enter in their corresponding amount field.\n"
             "                           If no addresses are specified here, the sender pays the fee.\n"
             "    [\n"
             "      \"address\"          (string) Subtract fee from this address\n"
@@ -1726,7 +1726,7 @@ static UniValue sendmany(const JSONRPCRequest& request)
     for (const std::string& name_ : keys) {
         CTxDestination dest = DecodeDestination(name_);
         if (!IsValidDestination(dest)) {
-            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, std::string("Invalid Qtum address: ") + name_);
+            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, std::string("Invalid EurekaCoin address: ") + name_);
         }
 
         if (destinations.count(dest)) {
@@ -1799,14 +1799,14 @@ static UniValue sendmanywithdupes(const JSONRPCRequest& request)
             "1. \"fromaccount\"         (string, required) DEPRECATED. The account to send the funds from. Should be \"\" for the default account\n"
             "2. \"amounts\"             (string, required) A json object with addresses and amounts\n"
             "    {\n"
-            "      \"address\":amount   (numeric or string) The qtum address is the key, the numeric amount (can be string) in " + CURRENCY_UNIT + " is the value\n"
+            "      \"address\":amount   (numeric or string) The eurekacoin address is the key, the numeric amount (can be string) in " + CURRENCY_UNIT + " is the value\n"
             "      ,...\n"
             "    }\n"
             "3. minconf                 (numeric, optional, default=1) Only use the balance confirmed at least this many times.\n"
             "4. \"comment\"             (string, optional) A comment\n"
             "5. subtractfeefrom         (array, optional) A json array with addresses.\n"
             "                           The fee will be equally deducted from the amount of each selected address.\n"
-            "                           Those recipients will receive less qtums than you enter in their corresponding amount field.\n"
+            "                           Those recipients will receive less eurekacoins than you enter in their corresponding amount field.\n"
             "                           If no addresses are specified here, the sender pays the fee.\n"
             "    [\n"
             "      \"address\"          (string) Subtract fee from this address\n"
@@ -1854,7 +1854,7 @@ static UniValue sendmanywithdupes(const JSONRPCRequest& request)
     {
         CTxDestination address = DecodeDestination(name_);
         if (!IsValidDestination(address))
-            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, std::string("Invalid Qtum address: ")+name_);
+            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, std::string("Invalid EurekaCoin address: ")+name_);
 
         setAddress.insert(address);
 
@@ -1913,16 +1913,16 @@ static UniValue addmultisigaddress(const JSONRPCRequest& request)
     if (request.fHelp || request.params.size() < 2 || request.params.size() > 4) {
         std::string msg = "addmultisigaddress nrequired [\"key\",...] ( \"label\" \"address_type\" )\n"
             "\nAdd a nrequired-to-sign multisignature address to the wallet. Requires a new wallet backup.\n"
-            "Each key is a Qtum address or hex-encoded public key.\n"
+            "Each key is a EurekaCoin address or hex-encoded public key.\n"
             "This functionality is only intended for use with non-watchonly addresses.\n"
             "See `importaddress` for watchonly p2sh address support.\n"
             "If 'label' is specified, assign address to that label.\n"
 
             "\nArguments:\n"
             "1. nrequired                      (numeric, required) The number of required signatures out of the n keys or addresses.\n"
-            "2. \"keys\"                         (string, required) A json array of qtum addresses or hex-encoded public keys\n"
+            "2. \"keys\"                         (string, required) A json array of eurekacoin addresses or hex-encoded public keys\n"
             "     [\n"
-            "       \"address\"                  (string) qtum address or hex-encoded public key\n"
+            "       \"address\"                  (string) eurekacoin address or hex-encoded public key\n"
             "       ...,\n"
             "     ]\n"
             "3. \"label\"                        (string, optional) A label to assign the addresses to.\n"
@@ -2066,13 +2066,13 @@ static UniValue addwitnessaddress(const JSONRPCRequest& request)
 
     if (!IsDeprecatedRPCEnabled("addwitnessaddress")) {
         throw JSONRPCError(RPC_METHOD_DEPRECATED, "addwitnessaddress is deprecated and will be fully removed in v0.17. "
-            "To use addwitnessaddress in v0.16, restart qtumd with -deprecatedrpc=addwitnessaddress.\n"
+            "To use addwitnessaddress in v0.16, restart eurekacoind with -deprecatedrpc=addwitnessaddress.\n"
             "Projects should transition to using the address_type argument of getnewaddress, or option -addresstype=[bech32|p2sh-segwit] instead.\n");
     }
 
     CTxDestination dest = DecodeDestination(request.params[0].get_str());
     if (!IsValidDestination(dest)) {
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Qtum address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid EurekaCoin address");
     }
 
     bool p2sh = true;
@@ -2326,9 +2326,9 @@ static UniValue listreceivedbylabel(const JSONRPCRequest& request)
 
     if (!IsDeprecatedRPCEnabled("accounts") && request.strMethod == "listreceivedbyaccount") {
         if (request.fHelp) {
-            throw std::runtime_error("listreceivedbyaccount (Deprecated, will be removed in V0.18. To use this command, start qtumd with -deprecatedrpc=accounts)");
+            throw std::runtime_error("listreceivedbyaccount (Deprecated, will be removed in V0.18. To use this command, start eurekacoind with -deprecatedrpc=accounts)");
         }
-        throw JSONRPCError(RPC_METHOD_DEPRECATED, "listreceivedbyaccount is deprecated and will be removed in V0.18. To use this command, start qtumd with -deprecatedrpc=accounts.");
+        throw JSONRPCError(RPC_METHOD_DEPRECATED, "listreceivedbyaccount is deprecated and will be removed in V0.18. To use this command, start eurekacoind with -deprecatedrpc=accounts.");
     }
 
     if (request.fHelp || request.params.size() > 3)
@@ -2502,7 +2502,7 @@ UniValue listtransactions(const JSONRPCRequest& request)
             "\nIf a label name is provided, this will return only incoming transactions paying to addresses with the specified label.\n"
             "\nReturns up to 'count' most recent transactions skipping the first 'from' transactions.\n"
             "Note that the \"account\" argument and \"otheraccount\" return value have been removed in V0.17. To use this RPC with an \"account\" argument, restart\n"
-            "qtumd with -deprecatedrpc=accounts\n"
+            "eurekacoind with -deprecatedrpc=accounts\n"
             "\nArguments:\n"
             "1. \"label\"    (string, optional) If set, should be a valid label name to return only incoming transactions\n"
             "              with the specified label, or \"*\" to disable filtering and return all transactions.\n"
@@ -2512,7 +2512,7 @@ UniValue listtransactions(const JSONRPCRequest& request)
             "\nResult:\n"
             "[\n"
             "  {\n"
-            "    \"address\":\"address\",    (string) The qtum address of the transaction.\n"
+            "    \"address\":\"address\",    (string) The eurekacoin address of the transaction.\n"
             "    \"category\":\"send|receive\", (string) The transaction category.\n"
             "    \"amount\": x.xxx,          (numeric) The amount in " + CURRENCY_UNIT + ". This is negative for the 'send' category, and is positive\n"
             "                                        for the 'receive' category,\n"
@@ -2557,7 +2557,7 @@ UniValue listtransactions(const JSONRPCRequest& request)
             "  {\n"
             "    \"account\":\"accountname\",       (string) DEPRECATED. This field will be removed in V0.18. The account name associated with the transaction. \n"
             "                                                It will be \"\" for the default account.\n"
-            "    \"address\":\"address\",    (string) The qtum address of the transaction. Not present for \n"
+            "    \"address\":\"address\",    (string) The eurekacoin address of the transaction. Not present for \n"
             "                                                move transactions (category = move).\n"
             "    \"category\":\"send|receive|move\", (string) The transaction category. 'move' is a local (off blockchain)\n"
             "                                                transaction between accounts, and not associated with an address,\n"
@@ -2690,9 +2690,9 @@ static UniValue listaccounts(const JSONRPCRequest& request)
 
     if (!IsDeprecatedRPCEnabled("accounts")) {
         if (request.fHelp) {
-            throw std::runtime_error("listaccounts (Deprecated, will be removed in V0.18. To use this command, start qtumd with -deprecatedrpc=accounts)");
+            throw std::runtime_error("listaccounts (Deprecated, will be removed in V0.18. To use this command, start eurekacoind with -deprecatedrpc=accounts)");
         }
-        throw JSONRPCError(RPC_METHOD_DEPRECATED, "listaccounts is deprecated and will be removed in V0.18. To use this command, start qtumd with -deprecatedrpc=accounts.");
+        throw JSONRPCError(RPC_METHOD_DEPRECATED, "listaccounts is deprecated and will be removed in V0.18. To use this command, start eurekacoind with -deprecatedrpc=accounts.");
     }
 
     if (request.fHelp || request.params.size() > 2)
@@ -2798,8 +2798,8 @@ static UniValue listsinceblock(const JSONRPCRequest& request)
             "\nResult:\n"
             "{\n"
             "  \"transactions\": [\n"
-            "    \"account\":\"accountname\",       (string) DEPRECATED. This field will be removed in V0.18. To see this deprecated field, start qtumd with -deprecatedrpc=accounts. The account name associated with the transaction. Will be \"\" for the default account.\n"
-            "    \"address\":\"address\",    (string) The qtum address of the transaction. Not present for move transactions (category = move).\n"
+            "    \"account\":\"accountname\",       (string) DEPRECATED. This field will be removed in V0.18. To see this deprecated field, start eurekacoind with -deprecatedrpc=accounts. The account name associated with the transaction. Will be \"\" for the default account.\n"
+            "    \"address\":\"address\",    (string) The eurekacoin address of the transaction. Not present for move transactions (category = move).\n"
             "    \"category\":\"send|receive\",     (string) The transaction category. 'send' has negative amounts, 'receive' has positive amounts.\n"
             "    \"amount\": x.xxx,          (numeric) The amount in " + CURRENCY_UNIT + ". This is negative for the 'send' category, and for the 'move' category for moves \n"
             "                                          outbound. It is positive for the 'receive' category, and for the 'move' category for inbound funds.\n"
@@ -2951,8 +2951,8 @@ static UniValue gettransaction(const JSONRPCRequest& request_)
             "                                                   may be unknown for unconfirmed transactions not in the mempool\n"
             "  \"details\" : [\n"
             "    {\n"
-            "      \"account\" : \"accountname\",      (string) DEPRECATED. This field will be removed in a V0.18. To see this deprecated field, start qtumd with -deprecatedrpc=accounts. The account name involved in the transaction, can be \"\" for the default account.\n"
-            "      \"address\" : \"address\",          (string) The qtum address involved in the transaction\n"
+            "      \"account\" : \"accountname\",      (string) DEPRECATED. This field will be removed in a V0.18. To see this deprecated field, start eurekacoind with -deprecatedrpc=accounts. The account name involved in the transaction, can be \"\" for the default account.\n"
+            "      \"address\" : \"address\",          (string) The eurekacoin address involved in the transaction\n"
             "      \"category\" : \"send|receive\",    (string) The category, either 'send' or 'receive'\n"
             "      \"amount\" : x.xxx,                 (numeric) The amount in " + CURRENCY_UNIT + "\n"
             "      \"label\" : \"label\",              (string) A comment for the address/transaction, if any\n"
@@ -3197,7 +3197,7 @@ static UniValue walletpassphrase(const JSONRPCRequest& request)
         throw std::runtime_error(
         	"walletpassphrase \"passphrase\" timeout stakingonly\n"
             "\nStores the wallet decryption key in memory for 'timeout' seconds.\n"
-        	"This is needed prior to performing transactions related to private keys such as sending QTUM and staking\n"
+        	"This is needed prior to performing transactions related to private keys such as sending EUREKACOIN and staking\n"
             "\nArguments:\n"
             "1. \"passphrase\"     (string, required) The wallet passphrase\n"
             "2. timeout            (numeric, required) The time to keep the decryption key in seconds; capped at 100000000 (~3 years).\n"
@@ -3403,7 +3403,7 @@ static UniValue encryptwallet(const JSONRPCRequest& request)
             "\nExamples:\n"
             "\nEncrypt your wallet\n"
             + HelpExampleCli("encryptwallet", "\"my pass phrase\"") +
-            "\nNow set the passphrase to use the wallet, such as for signing or sending qtum\n"
+            "\nNow set the passphrase to use the wallet, such as for signing or sending eurekacoin\n"
             + HelpExampleCli("walletpassphrase", "\"my pass phrase\"") +
             "\nNow we can do something like sign\n"
             + HelpExampleCli("signmessage", "\"address\" \"test message\"") +
@@ -3441,7 +3441,7 @@ static UniValue encryptwallet(const JSONRPCRequest& request)
     // slack space in .dat files; that is bad if the old data is
     // unencrypted private keys. So:
     StartShutdown();
-    return "wallet encrypted; Qtum server stopping, restart to run with encrypted wallet. The keypool has been flushed and a new HD seed was generated (if you are using HD). You need to make a new backup.";
+    return "wallet encrypted; EurekaCoin server stopping, restart to run with encrypted wallet. The keypool has been flushed and a new HD seed was generated (if you are using HD). You need to make a new backup.";
 }
 
 static UniValue reservebalance(const JSONRPCRequest& request)
@@ -3503,7 +3503,7 @@ static UniValue lockunspent(const JSONRPCRequest& request)
             "\nUpdates list of temporarily unspendable outputs.\n"
             "Temporarily lock (unlock=false) or unlock (unlock=true) specified transaction outputs.\n"
             "If no transaction outputs are specified when unlocking then all current locked transaction outputs are unlocked.\n"
-            "A locked transaction output will not be chosen by automatic coin selection, when spending qtums.\n"
+            "A locked transaction output will not be chosen by automatic coin selection, when spending eurekacoins.\n"
             "Locks are stored in memory only. Nodes start with zero locked outputs, and the locked output list\n"
             "is always cleared (by virtue of process exit) when a node stops or fails.\n"
             "Also see the listunspent call\n"
@@ -3809,7 +3809,7 @@ static UniValue loadwallet(const JSONRPCRequest& request)
         throw std::runtime_error(
             "loadwallet \"filename\"\n"
             "\nLoads a wallet from a wallet file or directory."
-            "\nNote that all wallet command-line options used when starting qtumd will be"
+            "\nNote that all wallet command-line options used when starting eurekacoind will be"
             "\napplied to the new wallet (eg -zapwallettxes, upgradewallet, rescan, etc).\n"
             "\nArguments:\n"
             "1. \"filename\"    (string, required) The wallet directory or .dat file.\n"
@@ -4028,9 +4028,9 @@ static UniValue listunspent(const JSONRPCRequest& request)
             "\nArguments:\n"
             "1. minconf          (numeric, optional, default=1) The minimum confirmations to filter\n"
             "2. maxconf          (numeric, optional, default=9999999) The maximum confirmations to filter\n"
-            "3. \"addresses\"      (string) A json array of qtum addresses to filter\n"
+            "3. \"addresses\"      (string) A json array of eurekacoin addresses to filter\n"
             "    [\n"
-            "      \"address\"     (string) qtum address\n"
+            "      \"address\"     (string) eurekacoin address\n"
             "      ,...\n"
             "    ]\n"
             "4. include_unsafe (bool, optional, default=true) Include outputs that are not safe to spend\n"
@@ -4047,9 +4047,9 @@ static UniValue listunspent(const JSONRPCRequest& request)
             "  {\n"
             "    \"txid\" : \"txid\",          (string) the transaction id \n"
             "    \"vout\" : n,               (numeric) the vout value\n"
-            "    \"address\" : \"address\",    (string) the qtum address\n"
+            "    \"address\" : \"address\",    (string) the eurekacoin address\n"
             "    \"label\" : \"label\",        (string) The associated label, or \"\" for the default label\n"
-            "    \"account\" : \"account\",    (string) DEPRECATED. This field will be removed in V0.18. To see this deprecated field, start qtumd with -deprecatedrpc=accounts. The associated account, or \"\" for the default account\n"
+            "    \"account\" : \"account\",    (string) DEPRECATED. This field will be removed in V0.18. To see this deprecated field, start eurekacoind with -deprecatedrpc=accounts. The associated account, or \"\" for the default account\n"
             "    \"scriptPubKey\" : \"key\",   (string) the script key\n"
             "    \"amount\" : x.xxx,         (numeric) the transaction output amount in " + CURRENCY_UNIT + "\n"
             "    \"confirmations\" : n,      (numeric) The number of confirmations\n"
@@ -4091,7 +4091,7 @@ static UniValue listunspent(const JSONRPCRequest& request)
             const UniValue& input = inputs[idx];
             CTxDestination dest = DecodeDestination(input.get_str());
             if (!IsValidDestination(dest)) {
-                throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, std::string("Invalid Qtum address: ") + input.get_str());
+                throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, std::string("Invalid EurekaCoin address: ") + input.get_str());
             }
             if (!destinations.insert(dest).second) {
                 throw JSONRPCError(RPC_INVALID_PARAMETER, std::string("Invalid parameter, duplicated address: ") + input.get_str());
@@ -4221,7 +4221,7 @@ void FundTransaction(CWallet* const pwallet, CMutableTransaction& tx, CAmount& f
             CTxDestination dest = DecodeDestination(options["changeAddress"].get_str());
 
             if (!IsValidDestination(dest)) {
-                throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "changeAddress must be a valid qtum address");
+                throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "changeAddress must be a valid eurekacoin address");
             }
 
             coinControl.destChange = dest;
@@ -4325,7 +4325,7 @@ static UniValue fundrawtransaction(const JSONRPCRequest& request)
                             "1. \"hexstring\"           (string, required) The hex string of the raw transaction\n"
                             "2. options                 (object, optional)\n"
                             "   {\n"
-                            "     \"changeAddress\"          (string, optional, default pool address) The qtum address to receive the change\n"
+                            "     \"changeAddress\"          (string, optional, default pool address) The eurekacoin address to receive the change\n"
                             "     \"changePosition\"         (numeric, optional, default random) The index of the change output\n"
                             "     \"change_type\"            (string, optional) The output type to use. Only valid if changeAddress is not specified. Options are \"legacy\", \"p2sh-segwit\", and \"bech32\". Default is set by -changetype.\n"
                             "     \"includeWatching\"        (boolean, optional, default false) Also select inputs which are watch only\n"
@@ -4334,7 +4334,7 @@ static UniValue fundrawtransaction(const JSONRPCRequest& request)
                             "     \"subtractFeeFromOutputs\" (array, optional) A json array of integers.\n"
                             "                              The fee will be equally deducted from the amount of each specified output.\n"
                             "                              The outputs are specified by their zero-based index, before any change output is added.\n"
-                            "                              Those recipients will receive less qtums than you enter in their corresponding amount field.\n"
+                            "                              Those recipients will receive less eurekacoins than you enter in their corresponding amount field.\n"
                             "                              If no outputs are specified here, the sender pays the fee.\n"
                             "                                  [vout_index,...]\n"
                             "     \"replaceable\"            (boolean, optional) Marks this transaction as BIP125 replaceable.\n"
@@ -4878,13 +4878,13 @@ UniValue getaddressinfo(const JSONRPCRequest& request)
     if (request.fHelp || request.params.size() != 1) {
         throw std::runtime_error(
             "getaddressinfo \"address\"\n"
-            "\nReturn information about the given qtum address. Some information requires the address\n"
+            "\nReturn information about the given eurekacoin address. Some information requires the address\n"
             "to be in the wallet.\n"
             "\nArguments:\n"
-            "1. \"address\"                    (string, required) The qtum address to get the information of.\n"
+            "1. \"address\"                    (string, required) The eurekacoin address to get the information of.\n"
             "\nResult:\n"
             "{\n"
-            "  \"address\" : \"address\",        (string) The qtum address validated\n"
+            "  \"address\" : \"address\",        (string) The eurekacoin address validated\n"
             "  \"scriptPubKey\" : \"hex\",       (string) The hex encoded scriptPubKey generated by the address\n"
             "  \"ismine\" : true|false,        (boolean) If the address is yours or not\n"
             "  \"iswatchonly\" : true|false,   (boolean) If the address is watchonly\n"
@@ -4904,7 +4904,7 @@ UniValue getaddressinfo(const JSONRPCRequest& request)
             "  \"embedded\" : {...},           (object, optional) Information about the address embedded in P2SH or P2WSH, if relevant and known. It includes all getaddressinfo output fields for the embedded address, excluding metadata (\"timestamp\", \"hdkeypath\", \"hdseedid\") and relation to the wallet (\"ismine\", \"iswatchonly\", \"account\").\n"
             "  \"iscompressed\" : true|false,  (boolean) If the address is compressed\n"
             "  \"label\" :  \"label\"         (string) The label associated with the address, \"\" is the default account\n"
-            "  \"account\" : \"account\"         (string) DEPRECATED. This field will be removed in V0.18. To see this deprecated field, start qtumd with -deprecatedrpc=accounts. The account associated with the address, \"\" is the default account\n"
+            "  \"account\" : \"account\"         (string) DEPRECATED. This field will be removed in V0.18. To see this deprecated field, start eurekacoind with -deprecatedrpc=accounts. The account associated with the address, \"\" is the default account\n"
             "  \"timestamp\" : timestamp,      (number, optional) The creation time of the key if available in seconds since epoch (Jan 1 1970 GMT)\n"
             "  \"hdkeypath\" : \"keypath\"       (string, optional) The HD keypath if the key is HD and available\n"
             "  \"hdseedid\" : \"<hash160>\"      (string, optional) The Hash160 of the HD seed\n"
@@ -5404,7 +5404,7 @@ UniValue walletcreatefundedpsbt(const JSONRPCRequest& request)
                             "That is, each address can only appear once and there can only be one 'data' object.\n"
                             "   [\n"
                             "    {\n"
-                            "      \"address\": x.xxx,    (obj, optional) A key-value pair. The key (string) is the qtum address, the value (float or string) is the amount in " + CURRENCY_UNIT + "\n"
+                            "      \"address\": x.xxx,    (obj, optional) A key-value pair. The key (string) is the eurekacoin address, the value (float or string) is the amount in " + CURRENCY_UNIT + "\n"
                             "    },\n"
                             "    {\n"
                             "      \"data\": \"hex\"        (obj, optional) A key-value pair. The key must be \"data\", the value is hex encoded data\n"
@@ -5416,7 +5416,7 @@ UniValue walletcreatefundedpsbt(const JSONRPCRequest& request)
                             "                             Allows this transaction to be replaced by a transaction with higher fees. If provided, it is an error if explicit sequence numbers are incompatible.\n"
                             "4. options                 (object, optional)\n"
                             "   {\n"
-                            "     \"changeAddress\"          (string, optional, default pool address) The qtum address to receive the change\n"
+                            "     \"changeAddress\"          (string, optional, default pool address) The eurekacoin address to receive the change\n"
                             "     \"changePosition\"         (numeric, optional, default random) The index of the change output\n"
                             "     \"change_type\"            (string, optional) The output type to use. Only valid if changeAddress is not specified. Options are \"legacy\", \"p2sh-segwit\", and \"bech32\". Default is set by -changetype.\n"
                             "     \"includeWatching\"        (boolean, optional, default false) Also select inputs which are watch only\n"
@@ -5425,7 +5425,7 @@ UniValue walletcreatefundedpsbt(const JSONRPCRequest& request)
                             "     \"subtractFeeFromOutputs\" (array, optional) A json array of integers.\n"
                             "                              The fee will be equally deducted from the amount of each specified output.\n"
                             "                              The outputs are specified by their zero-based index, before any change output is added.\n"
-                            "                              Those recipients will receive less qtums than you enter in their corresponding amount field.\n"
+                            "                              Those recipients will receive less eurekacoins than you enter in their corresponding amount field.\n"
                             "                              If no outputs are specified here, the sender pays the fee.\n"
                             "                                  [vout_index,...]\n"
                             "     \"replaceable\"            (boolean, optional) Marks this transaction as BIP125 replaceable.\n"

@@ -155,49 +155,49 @@ BASE_SCRIPTS = [
     # Don't append tests at the end to avoid merge conflicts
     # Put them in a random line within the section that fits their approximate run-time
 
-    # qtum
-    'qtum_dgp.py',
-    'qtum_pos.py',
-    'qtum_opcall.py',
-    'qtum_opcreate.py',
-    'qtum_8mb_block.py',
-    'qtum_gas_limit.py',
-    'qtum_searchlog.py',
-    'qtum_pos_segwit.py',
-    'qtum_state_root.py',
-    'qtum_evm_globals.py',
-    'qtum_null_sender.py',
-    'qtum_waitforlogs.py',
-    'qtum_block_header.py',
-    'qtum_callcontract.py',
-    'qtum_spend_op_call.py',
-    'qtum_condensing_txs.py',
-    'qtum_createcontract.py',
-    'qtum_sendtocontract.py',
-    'qtum_identical_refunds.py',
-    'qtum_create_eth_op_code.py',
-    'qtum_gas_limit_overflow.py',
-    'qtum_call_empty_contract.py',
-    'qtum_dgp_block_size_sync.py',
-    'qtum_pos_conflicting_txs.py',
-    'qtum_globals_state_changer.py',
-    'qtum_no_exec_call_disabled.py',
-    'qtum_soft_block_gas_limits.py',
-    'qtum_dgp_block_size_restart.py',
-    'qtum_searchlog_restart_node.py',
-    'qtum_immature_coinstake_spend.py',
-    'qtum_transaction_prioritization.py',
-    'qtum_assign_mpos_fees_to_gas_refund.py',
-    'qtum_ignore_mpos_participant_reward.py',
-    'qtum_many_value_refunds_from_same_tx.py',
-    'qtum_combined_outputs_exceed_gas_limit.py',
-    'qtum_dgp_gas_price_lingering_mempool_tx.py',
-    'qtum_header_spam.py',
-    'qtum_divergence_dos.py',
-    'qtum_prioritize_create_over_call.py',
-    'qtum_callcontract_timestamp.py',
-    'qtum_transaction_receipt_origin_contract_address.py',
-    'qtum_block_number_corruption.py',
+    # eurekacoin
+    'eurekacoin_dgp.py',
+    'eurekacoin_pos.py',
+    'eurekacoin_opcall.py',
+    'eurekacoin_opcreate.py',
+    'eurekacoin_8mb_block.py',
+    'eurekacoin_gas_limit.py',
+    'eurekacoin_searchlog.py',
+    'eurekacoin_pos_segwit.py',
+    'eurekacoin_state_root.py',
+    'eurekacoin_evm_globals.py',
+    'eurekacoin_null_sender.py',
+    'eurekacoin_waitforlogs.py',
+    'eurekacoin_block_header.py',
+    'eurekacoin_callcontract.py',
+    'eurekacoin_spend_op_call.py',
+    'eurekacoin_condensing_txs.py',
+    'eurekacoin_createcontract.py',
+    'eurekacoin_sendtocontract.py',
+    'eurekacoin_identical_refunds.py',
+    'eurekacoin_create_eth_op_code.py',
+    'eurekacoin_gas_limit_overflow.py',
+    'eurekacoin_call_empty_contract.py',
+    'eurekacoin_dgp_block_size_sync.py',
+    'eurekacoin_pos_conflicting_txs.py',
+    'eurekacoin_globals_state_changer.py',
+    'eurekacoin_no_exec_call_disabled.py',
+    'eurekacoin_soft_block_gas_limits.py',
+    'eurekacoin_dgp_block_size_restart.py',
+    'eurekacoin_searchlog_restart_node.py',
+    'eurekacoin_immature_coinstake_spend.py',
+    'eurekacoin_transaction_prioritization.py',
+    'eurekacoin_assign_mpos_fees_to_gas_refund.py',
+    'eurekacoin_ignore_mpos_participant_reward.py',
+    'eurekacoin_many_value_refunds_from_same_tx.py',
+    'eurekacoin_combined_outputs_exceed_gas_limit.py',
+    'eurekacoin_dgp_gas_price_lingering_mempool_tx.py',
+    'eurekacoin_header_spam.py',
+    'eurekacoin_divergence_dos.py',
+    'eurekacoin_prioritize_create_over_call.py',
+    'eurekacoin_callcontract_timestamp.py',
+    'eurekacoin_transaction_receipt_origin_contract_address.py',
+    'eurekacoin_block_number_corruption.py',
 ]
 
 EXTENDED_SCRIPTS = [
@@ -224,7 +224,7 @@ EXTENDED_SCRIPTS = [
     'feature_notifications.py',
     'rpc_invalidateblock.py',
     'feature_rbf.py',
-    # Version <4 blocks are never allowed in regtest on qtum
+    # Version <4 blocks are never allowed in regtest on eurekacoin
     'p2p_unrequested_blocks.py',
     'feature_dersig.py',
     'feature_cltv.py'
@@ -356,8 +356,8 @@ def run_tests(test_list, src_dir, build_dir, tmpdir, jobs=1, enable_coverage=Fal
 
     # Warn if bitcoind is already running (unix only)
     try:
-        if subprocess.check_output(["pidof", "qtumd"]) is not None:
-            print("%sWARNING!%s There is already a qtumd process running on this system. Tests may fail unexpectedly due to resource contention!" % (BOLD[1], BOLD[0]))
+        if subprocess.check_output(["pidof", "eurekacoind"]) is not None:
+            print("%sWARNING!%s There is already a eurekacoind process running on this system. Tests may fail unexpectedly due to resource contention!" % (BOLD[1], BOLD[0]))
     except (OSError, subprocess.SubprocessError):
         pass
 
@@ -568,7 +568,7 @@ class TestResult():
 def check_script_prefixes():
     """Check that test scripts start with one of the allowed name prefixes."""
 
-    good_prefixes_re = re.compile("(example|feature|interface|mempool|mining|p2p|rpc|wallet|qtum)_")
+    good_prefixes_re = re.compile("(example|feature|interface|mempool|mining|p2p|rpc|wallet|eurekacoin)_")
     bad_script_names = [script for script in ALL_SCRIPTS if good_prefixes_re.match(script) is None]
 
     if bad_script_names:

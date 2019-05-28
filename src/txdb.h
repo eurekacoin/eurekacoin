@@ -126,7 +126,7 @@ public:
     bool ReadFlag(const std::string &name, bool &fValue);
     bool LoadBlockIndexGuts(const Consensus::Params& consensusParams, std::function<CBlockIndex*(const uint256&)> insertBlockIndex);
 
-    ////////////////////////////////////////////////////////////////////////////// // qtum
+    ////////////////////////////////////////////////////////////////////////////// // eurekacoin
     bool WriteHeightIndex(const CHeightTxIndexKey &heightIndex, const std::vector<uint256>& hash);
 
     /**

@@ -1,113 +1,113 @@
-What is Qtum?
+What is EurekaCoin?
 -------------
 
-Qtum is a decentralized blockchain project built on Bitcoin's UTXO model, with support for Ethereum Virtual Machine based smart contracts, and secured by a proof of stake consensus model. It achieves this through the revolutionary Account Abstraction Layer which allows the EVM to communicate with Qtum's Bitcoin-like UTXO blockchain. For more general information about Qtum as well as links to join our community, go to https://qtum.org
+EurekaCoin is a decentralized blockchain project built on Bitcoin's UTXO model, with support for Ethereum Virtual Machine based smart contracts, and secured by a proof of stake consensus model. It achieves this through the revolutionary Account Abstraction Layer which allows the EVM to communicate with EurekaCoin's Bitcoin-like UTXO blockchain. For more general information about EurekaCoin as well as links to join our community, go to https://eurekacoin.org
 
-Welcome to the Qtum Ignition Main Network. This is the main network where the tokens hold value and should be guarded very carefully. If you are testing the network, or developing unstable software on Qtum, we highly recommend using either testnet or regtest mode. 
+Welcome to the EurekaCoin Ignition Main Network. This is the main network where the tokens hold value and should be guarded very carefully. If you are testing the network, or developing unstable software on EurekaCoin, we highly recommend using either testnet or regtest mode. 
 
-The major features of the Qtum network include:
+The major features of the EurekaCoin network include:
 
-1. Compatibility with the Ethereum Virtual Machine, which allows for compatibility with most existing Solidity based smart contracts. No special solidity compiler is required to deploy your smart contract to Qtum. 
-2. A Proof of Stake consensus system which is optimized for Qtum's contract model. Any user can stake and help to secure the network. There is no voting, master nodes, or minimum amount required. There have been transactions as small as 2 Qtum that have created blocks in the past. 
+1. Compatibility with the Ethereum Virtual Machine, which allows for compatibility with most existing Solidity based smart contracts. No special solidity compiler is required to deploy your smart contract to EurekaCoin. 
+2. A Proof of Stake consensus system which is optimized for EurekaCoin's contract model. Any user can stake and help to secure the network. There is no voting, master nodes, or minimum amount required. There have been transactions as small as 2 EurekaCoin that have created blocks in the past. 
 3. The Decentralized Governance Protocol is completely implemented and functional, which allows certain network parameters to be modified without a fork or other network disruption. This currently controls parameters like block size, gas prices, etc. 
-4. Uses the UTXO transaction model and is compatible with Bitcoin, allowing for existing tooling and workflows to be used with Qtum. This allows for the infamous SPV protocol to be used which is ideal for light wallets on mobile phones and IoT devices.
+4. Uses the UTXO transaction model and is compatible with Bitcoin, allowing for existing tooling and workflows to be used with EurekaCoin. This allows for the infamous SPV protocol to be used which is ideal for light wallets on mobile phones and IoT devices.
 
-Note: Qtum Core is considered beta software. We make no warranties or guarantees of its security or stability.
+Note: EurekaCoin Core is considered beta software. We make no warranties or guarantees of its security or stability.
 
-Qtum Documentation and Usage Resources
+EurekaCoin Documentation and Usage Resources
 ---------------
 
-These are some resources that might be helpful in understanding Qtum. Note that the unofficial documents are not created by the Qtum team.
+These are some resources that might be helpful in understanding EurekaCoin. Note that the unofficial documents are not created by the EurekaCoin team.
 
 Basic usage resources:
 
-* [Official Qtum Usage Guide](https://github.com/qtumproject/qtum/wiki/Qtum-Wallet-Tutorial)
-* [Unofficial Qtum staking tutorial](https://steemit.com/qtum/@cryptominder/qtum-staking-tutorial-using-qtum-qt)
-* [Unofficial Qtum staking tutorial on Raspberry Pi](https://steemit.com/qtum/@cryptominder/qtum-staking-tutorial-using-qtumd-on-a-raspberry-pi-3)
-* [Unofficial Qtum staking tutorial on AWS EC2](https://github.com/aaronmboyd/qtum-staking-on-aws-ec2)
-* [Unofficial guide for keeping your wallet safe](https://steemit.com/qtum/@cryptominder/encrypting-backing-up-and-restoring-your-qtum-wallet)
-* [Block explorer](https://explorer.qtum.org)
-* [Unofficial block explorer](https://qtumexplorer.io/)
+* [Official EurekaCoin Usage Guide](https://github.com/eurekacoin/eurekacoin/wiki/EurekaCoin-Wallet-Tutorial)
+* [Unofficial EurekaCoin staking tutorial](https://steemit.com/eurekacoin/@cryptominder/eurekacoin-staking-tutorial-using-eurekacoin-qt)
+* [Unofficial EurekaCoin staking tutorial on Raspberry Pi](https://steemit.com/eurekacoin/@cryptominder/eurekacoin-staking-tutorial-using-eurekacoind-on-a-raspberry-pi-3)
+* [Unofficial EurekaCoin staking tutorial on AWS EC2](https://github.com/aaronmboyd/eurekacoin-staking-on-aws-ec2)
+* [Unofficial guide for keeping your wallet safe](https://steemit.com/eurekacoin/@cryptominder/encrypting-backing-up-and-restoring-your-eurekacoin-wallet)
+* [Block explorer](https://explorer.eurekacoin.org)
+* [Unofficial block explorer](https://eurekacoinexplorer.io/)
 
 Development resources:
 
-* [Deploying a custom token to Qtum](https://blog.qtum.org/qtum-custom-token-walkthrough-467d725fa27d)
-* [Early example faucet contract](http://earlz.net/view/2017/06/30/2144/the-qtum-sparknet-faucet)
-* [Unofficial Qtum Hello World tutorial](https://steemit.com/qtum/@cryptominder/quantum-qtum-blockchain-developer-tutorial-hello-world)
-* [Qtum Book - A Developer's Guide To QTUM](https://github.com/qtumproject/qtumbook)
+* [Deploying a custom token to EurekaCoin](https://blog.eurekacoin.org/eurekacoin-custom-token-walkthrough-467d725fa27d)
+* [Early example faucet contract](http://earlz.net/view/2017/06/30/2144/the-eurekacoin-sparknet-faucet)
+* [Unofficial EurekaCoin Hello World tutorial](https://steemit.com/eurekacoin/@cryptominder/quantum-eurekacoin-blockchain-developer-tutorial-hello-world)
+* [EurekaCoin Book - A Developer's Guide To EUREKACOIN](https://github.com/eurekacoin/eurekacoinbook)
 
-General Info about Qtum:
+General Info about EurekaCoin:
 
-* [Mainnet event AMA](https://www.reddit.com/r/Qtum/comments/6zs8t0/official_qtum_ama_thread_starts_at_10pm_beijing/)
-* [Qtum's PoS vs CASPER](https://www.reddit.com/r/Qtum/comments/788oa5/qtums_pos_vs_casper_and_the_nothingatstake_problem/)
-* [Technical article explaining Qtum's PoS model in depth](http://earlz.net/view/2017/07/27/1904/the-missing-explanation-of-proof-of-stake-version)
-* [Unofficial What is Qtum article](https://storeofvalue.github.io/posts/what-is-qtum-without-the-bullshit/)
+* [Mainnet event AMA](https://www.reddit.com/r/EurekaCoin/comments/6zs8t0/official_eurekacoin_ama_thread_starts_at_10pm_beijing/)
+* [EurekaCoin's PoS vs CASPER](https://www.reddit.com/r/EurekaCoin/comments/788oa5/eurekacoins_pos_vs_casper_and_the_nothingatstake_problem/)
+* [Technical article explaining EurekaCoin's PoS model in depth](http://earlz.net/view/2017/07/27/1904/the-missing-explanation-of-proof-of-stake-version)
+* [Unofficial What is EurekaCoin article](https://storeofvalue.github.io/posts/what-is-eurekacoin-without-the-bullshit/)
 
 Developer's Tools
 -----------------
 
 * Smart contract deployment tool
-  * https://github.com/qtumproject/solar
+  * https://github.com/eurekacoin/solar
 * DApp JavaScript Library
-  * https://github.com/qtumproject/qtumjs
-* A toolkit for building qtum light wallets
-  * https://github.com/qtumproject/qtumjs-wallet
-* CORS qtumd RPC proxy for DApp
-  * https://github.com/qtumproject/qtumportal
-* Docker images for running qtum services
-  * https://github.com/qtumproject/qtum-docker
-* HTTP API that powers the block explorer and the QTUM web wallet
-  * https://github.com/qtumproject/insight-api
+  * https://github.com/eurekacoin/eurekacoinjs
+* A toolkit for building eurekacoin light wallets
+  * https://github.com/eurekacoin/eurekacoinjs-wallet
+* CORS eurekacoind RPC proxy for DApp
+  * https://github.com/eurekacoin/eurekacoinportal
+* Docker images for running eurekacoin services
+  * https://github.com/eurekacoin/eurekacoin-docker
+* HTTP API that powers the block explorer and the EUREKACOIN web wallet
+  * https://github.com/eurekacoin/insight-api
 
 
-What is Qtum Core?
+What is EurekaCoin Core?
 ------------------
 
-Qtum Core is our primary mainnet wallet. It implements a full node and is capable of storing, validating, and distributing all history of the Qtum network. Qtum Core is considered the reference implementation for the Qtum network. 
+EurekaCoin Core is our primary mainnet wallet. It implements a full node and is capable of storing, validating, and distributing all history of the EurekaCoin network. EurekaCoin Core is considered the reference implementation for the EurekaCoin network. 
 
-Qtum Core currently implements the following:
+EurekaCoin Core currently implements the following:
 
-* Sending/Receiving Qtum
-* Sending/Receiving QRC20 tokens on the Qtum network
-* Staking and creating blocks for the Qtum network
+* Sending/Receiving EurekaCoin
+* Sending/Receiving QRC20 tokens on the EurekaCoin network
+* Staking and creating blocks for the EurekaCoin network
 * Creating and interacting with smart contracts
 * Running a full node for distributing the blockchain to other users
 * "Prune" mode, which minimizes disk usage
-* Regtest mode, which enables developers to very quickly build their own private Qtum network for Dapp testing
+* Regtest mode, which enables developers to very quickly build their own private EurekaCoin network for Dapp testing
 * Compatibility with the Bitcoin Core set of RPC commands and APIs
 
 Alternative Wallets
 -------------------
 
-Qtum Core uses a full node model, and thus requires downloading the entire blockchain. If you do not need the entire blockchain, and do not intend on developing smart contracts, it may be more ideal to use an alternative wallet such as one of our light wallets that can be synchronized in a matter of seconds. 
+EurekaCoin Core uses a full node model, and thus requires downloading the entire blockchain. If you do not need the entire blockchain, and do not intend on developing smart contracts, it may be more ideal to use an alternative wallet such as one of our light wallets that can be synchronized in a matter of seconds. 
 
-### Qtum Electrum
+### EurekaCoin Electrum
 
 A light wallet that supports the Ledger hardware wallet and is based on the well known Electrum wallet software. 
 
-Download: https://github.com/qtumproject/qtum-electrum/releases
+Download: https://github.com/eurekacoin/eurekacoin-electrum/releases
 
 ### iOS and Android Wallets
 
 These wallets run on mobile devices and synchronize quickly. 
 
-Android Download: https://play.google.com/store/apps/details?id=org.qtum.wallet
+Android Download: https://play.google.com/store/apps/details?id=org.eurekacoin.wallet
 
-iOS Download: https://github.com/qtumproject/qtum-ios (open source, we are still working with Apple to get approval for their app store)
+iOS Download: https://github.com/eurekacoin/eurekacoin-ios (open source, we are still working with Apple to get approval for their app store)
 
 ### Ledger Chrome Wallet
 
 This light wallet runs in your Chrome browser as a browser extension. This wallet requires a Ledger device to use.
 
-How to install: https://ledger.zendesk.com/hc/en-us/articles/115003776913-How-to-install-and-use-Qtum-with-Ledger
+How to install: https://ledger.zendesk.com/hc/en-us/articles/115003776913-How-to-install-and-use-EurekaCoin-with-Ledger
 
 
-Building Qtum Core
+Building EurekaCoin Core
 ----------
 
 ### Build on Ubuntu
 
-    This is a quick start script for compiling Qtum on  Ubuntu
+    This is a quick start script for compiling EurekaCoin on  Ubuntu
 
 
     sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils git cmake libboost-all-dev
@@ -119,8 +119,8 @@ Building Qtum Core
     # If you want to build the Qt GUI:
     sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler qrencode
 
-    git clone https://github.com/qtumproject/qtum --recursive
-    cd qtum
+    git clone https://github.com/eurekacoin/eurekacoin --recursive
+    cd eurekacoin
 
     # Note autogen will prompt to install some more dependencies if needed
     ./autogen.sh
@@ -129,7 +129,7 @@ Building Qtum Core
     
 ### Build on CentOS
 
-Here is a brief description for compiling Qtum on CentOS, for more details please refer to [the specific document](https://github.com/qtumproject/qtum/blob/master/doc/build-unix.md)
+Here is a brief description for compiling EurekaCoin on CentOS, for more details please refer to [the specific document](https://github.com/eurekacoin/eurekacoin/blob/master/doc/build-unix.md)
 
     # Compiling boost manually
     sudo yum install python-devel bzip2-devel
@@ -141,16 +141,16 @@ Here is a brief description for compiling Qtum on CentOS, for more details pleas
     ./b2 headers
     sudo ./b2 -j4 install
     
-    # Installing Dependencies for Qtum
+    # Installing Dependencies for EurekaCoin
     sudo yum install epel-release
     sudo yum install libtool libdb4-cxx-devel openssl-devel libevent-devel
     
     # If you want to build the Qt GUI:
     sudo yum install qt5-qttools-devel protobuf-devel qrencode-devel
     
-    # Building Qtum
-    git clone --recursive https://github.com/qtumproject/qtum.git
-    cd qtum
+    # Building EurekaCoin
+    git clone --recursive https://github.com/eurekacoin/eurekacoin.git
+    cd eurekacoin
     ./autogen.sh
     ./configure
     make -j4
@@ -176,16 +176,16 @@ Then install [Homebrew](https://brew.sh).
 
 NOTE: Building with Qt4 is still supported, however, could result in a broken UI. Building with Qt5 is recommended.
 
-#### Build Qtum Core
+#### Build EurekaCoin Core
 
-1. Clone the qtum source code and cd into `qtum`
+1. Clone the eurekacoin source code and cd into `eurekacoin`
 
-        git clone --recursive https://github.com/qtumproject/qtum.git
-        cd qtum
+        git clone --recursive https://github.com/eurekacoin/eurekacoin.git
+        cd eurekacoin
 
-2.  Build qtum-core:
+2.  Build eurekacoin-core:
 
-    Configure and build the headless qtum binaries as well as the GUI (if Qt is found).
+    Configure and build the headless eurekacoin binaries as well as the GUI (if Qt is found).
 
     You can disable the GUI build by passing `--without-gui` to configure.
 
@@ -199,26 +199,26 @@ NOTE: Building with Qt4 is still supported, however, could result in a broken UI
 
 ### Run
 
-Then you can either run the command-line daemon using `src/qtumd` and `src/qtum-cli`, or you can run the Qt GUI using `src/qt/qtum-qt`
+Then you can either run the command-line daemon using `src/eurekacoind` and `src/eurekacoin-cli`, or you can run the Qt GUI using `src/qt/eurekacoin-qt`
 
-For in-depth description of Sparknet and how to use Qtum for interacting with contracts, please see [sparknet-guide](doc/sparknet-guide.md).
+For in-depth description of Sparknet and how to use EurekaCoin for interacting with contracts, please see [sparknet-guide](doc/sparknet-guide.md).
 
 License
 -------
 
-Qtum is GPLv3 licensed.
+EurekaCoin is GPLv3 licensed.
 
 
 Development Process
 -------------------
 
 The `master` branch is regularly built and tested, but is not guaranteed to be
-completely stable. [Tags](https://github.com/qtumproject/qtum/tags) are created
-regularly to indicate new official, stable release versions of Qtum.
+completely stable. [Tags](https://github.com/eurekacoin/eurekacoin/tags) are created
+regularly to indicate new official, stable release versions of EurekaCoin.
 
 The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md).
 
-Developer IRC can be found on Freenode at #qtum-dev.
+Developer IRC can be found on Freenode at #eurekacoin-dev.
 
 Testing
 -------

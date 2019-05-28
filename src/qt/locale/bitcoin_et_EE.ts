@@ -104,7 +104,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>QtumGUI</name>
+    <name>EurekaCoinGUI</name>
     <message>
         <source>Synchronizing with network...</source>
         <translation>Võrguga sünkroniseerimine...</translation>
@@ -130,8 +130,8 @@
         <translation>Kõvakettal olevate plokkide reindekseerimine...</translation>
     </message>
     <message>
-        <source>Qtum</source>
-        <translation>Qtum</translation>
+        <source>EurekaCoin</source>
+        <translation>EurekaCoin</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -265,8 +265,8 @@
         <translation>Tere tulemast</translation>
     </message>
     <message>
-        <source>Qtum</source>
-        <translation>Qtum</translation>
+        <source>EurekaCoin</source>
+        <translation>EurekaCoin</translation>
     </message>
     <message>
         <source>Error</source>
@@ -758,10 +758,10 @@
     </message>
     </context>
 <context>
-    <name>qtum-core</name>
+    <name>eurekacoin-core</name>
     <message>
-        <source>Qtum Core</source>
-        <translation>Qtum Core</translation>
+        <source>EurekaCoin Core</source>
+        <translation>EurekaCoin Core</translation>
     </message>
     <message>
         <source>Information</source>

@@ -43,11 +43,11 @@
     </message>
     <message>
         <source>Choose the address to send coins to</source>
-        <translation>Izvēlies adresi uz kuru sūtīt qtums</translation>
+        <translation>Izvēlies adresi uz kuru sūtīt eurekacoins</translation>
     </message>
     <message>
         <source>Choose the address to receive coins with</source>
-        <translation>Izvēlies adresi ar kuru saņemt qtums</translation>
+        <translation>Izvēlies adresi ar kuru saņemt eurekacoins</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -136,7 +136,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>QtumGUI</name>
+    <name>EurekaCoinGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Parakstīt &amp;ziņojumu...</translation>
@@ -214,8 +214,8 @@
         <translation>Bloku reindeksēšana no diska...</translation>
     </message>
     <message>
-        <source>Send coins to a Qtum address</source>
-        <translation>Nosūtīt bitkoinus uz Qtum adresi</translation>
+        <source>Send coins to a EurekaCoin address</source>
+        <translation>Nosūtīt bitkoinus uz EurekaCoin adresi</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -238,8 +238,8 @@
         <translation>&amp;Pārbaudīt ziņojumu...</translation>
     </message>
     <message>
-        <source>Qtum</source>
-        <translation>Qtum</translation>
+        <source>EurekaCoin</source>
+        <translation>EurekaCoin</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -266,12 +266,12 @@
         <translation>Šifrēt privātās atslēgas kuras pieder tavam maciņam</translation>
     </message>
     <message>
-        <source>Sign messages with your Qtum addresses to prove you own them</source>
-        <translation>Parakstīt ziņojumus ar savām Qtum adresēm lai pierādītu ka tās pieder tev</translation>
+        <source>Sign messages with your EurekaCoin addresses to prove you own them</source>
+        <translation>Parakstīt ziņojumus ar savām EurekaCoin adresēm lai pierādītu ka tās pieder tev</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Qtum addresses</source>
-        <translation>Pārbaudīt ziņojumus lai pārliecinātos, ka tie tika parakstīti ar norādītajām Qtum adresēm</translation>
+        <source>Verify messages to ensure they were signed with specified EurekaCoin addresses</source>
+        <translation>Pārbaudīt ziņojumus lai pārliecinātos, ka tie tika parakstīti ar norādītajām EurekaCoin adresēm</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -290,12 +290,12 @@
         <translation>Ciļņu rīkjosla</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and qtum: URIs)</source>
-        <translation>Pieprasīt maksājumus (izveido QR kodu un qtum: URIs)</translation>
+        <source>Request payments (generates QR codes and eurekacoin: URIs)</source>
+        <translation>Pieprasīt maksājumus (izveido QR kodu un eurekacoin: URIs)</translation>
     </message>
     <message>
-        <source>Open a qtum: URI or payment request</source>
-        <translation>Atvērt qtum URI vai maksājuma pieprasījumu</translation>
+        <source>Open a eurekacoin: URI or payment request</source>
+        <translation>Atvērt eurekacoin URI vai maksājuma pieprasījumu</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -469,8 +469,8 @@
         <translation>Izmantot pielāgotu datu mapi:</translation>
     </message>
     <message>
-        <source>Qtum</source>
-        <translation>Qtum</translation>
+        <source>EurekaCoin</source>
+        <translation>EurekaCoin</translation>
     </message>
     <message>
         <source>Error</source>
@@ -563,15 +563,15 @@
     </message>
     <message>
         <source>Enable coin &amp;control features</source>
-        <translation>Ieslēgt qtum &amp;kontroles funkcijas</translation>
+        <translation>Ieslēgt eurekacoin &amp;kontroles funkcijas</translation>
     </message>
     <message>
         <source>&amp;Spend unconfirmed change</source>
         <translation>&amp;Tērēt neapstiprinātu atlikumu</translation>
     </message>
     <message>
-        <source>Automatically open the Qtum client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Uz rūtera automātiski atvērt Qtum klienta portu. Tas strādā tikai tad, ja rūteris atbalsta UPnP un tas ir ieslēgts.</translation>
+        <source>Automatically open the EurekaCoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Uz rūtera automātiski atvērt EurekaCoin klienta portu. Tas strādā tikai tad, ja rūteris atbalsta UPnP un tas ir ieslēgts.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -623,7 +623,7 @@
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
-        <translation>Vai rādīt Qtum kontroles funkcijas vai nē.</translation>
+        <translation>Vai rādīt EurekaCoin kontroles funkcijas vai nē.</translation>
     </message>
     <message>
         <source>&amp;OK</source>
@@ -661,8 +661,8 @@
         <translation>Forma</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Qtum network after a connection is established, but this process has not completed yet.</source>
-        <translation>Attēlotā informācija var būt novecojusi. Jūsu maciņš pēc savienojuma izveides automātiski sinhronizējas ar Qtum tīklu, taču šis process vēl nav beidzies.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the EurekaCoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>Attēlotā informācija var būt novecojusi. Jūsu maciņš pēc savienojuma izveides automātiski sinhronizējas ar EurekaCoin tīklu, taču šis process vēl nav beidzies.</translation>
     </message>
     <message>
         <source>Available:</source>
@@ -928,7 +928,7 @@
     </message>
     <message>
         <source>Coin Control Features</source>
-        <translation>Qtum Kontroles Funkcijas</translation>
+        <translation>EurekaCoin Kontroles Funkcijas</translation>
     </message>
     <message>
         <source>Inputs...</source>
@@ -1111,8 +1111,8 @@
         <translation>Kopēt parakstu uz sistēmas starpliktuvi</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Qtum address</source>
-        <translation>Parakstīt ziņojumu lai pierādītu, ka esi šīs Qtum adreses īpašnieks.</translation>
+        <source>Sign the message to prove you own this EurekaCoin address</source>
+        <translation>Parakstīt ziņojumu lai pierādītu, ka esi šīs EurekaCoin adreses īpašnieks.</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -1202,10 +1202,10 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>qtum-core</name>
+    <name>eurekacoin-core</name>
     <message>
-        <source>Qtum Core</source>
-        <translation>Qtum Core</translation>
+        <source>EurekaCoin Core</source>
+        <translation>EurekaCoin Core</translation>
     </message>
     <message>
         <source>Error loading block database</source>

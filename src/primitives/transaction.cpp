@@ -114,7 +114,7 @@ std::string CTransaction::ToString() const
     return str;
 }
 
-///////////////////////////////////////////////////////////// qtum
+///////////////////////////////////////////////////////////// eurekacoin
 bool CTransaction::HasCreateOrCall() const{
     for(const CTxOut& v : vout){
         if(v.scriptPubKey.HasOpCreate() || v.scriptPubKey.HasOpCall()){

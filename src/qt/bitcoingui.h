@@ -34,7 +34,7 @@ class HelpMessageDialog;
 class ModalOverlay;
 class TitleBar;
 class NavigationBar;
-class QtumVersionChecker;
+class EurekaCoinVersionChecker;
 
 namespace interfaces {
 class Handler;
@@ -152,7 +152,7 @@ private:
     HelpMessageDialog* helpMessageDialog = nullptr;
     ModalOverlay* modalOverlay = nullptr;
     ModalOverlay *modalBackupOverlay = nullptr;
-    QtumVersionChecker *qtumVersionChecker = nullptr;
+    EurekaCoinVersionChecker *eurekacoinVersionChecker = nullptr;
 
     /** Keep track of previous number of blocks, to detect progress */
     int prevBlocks = 0;

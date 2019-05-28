@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Name=Bitcoin Core
+Comment=Connect to the EurekaCoin P2P Network
+Exec=eurekacoin-qt %u
+Terminal=false
+Type=Application
+Icon=eurekacoin128
+MimeType=x-scheme-handler/eurekacoin;
+Categories=Office;Finance;
+StartupWMClass=EurekaCoin-qt
+Name[en_US]=eurekacoin-qt

@@ -19,8 +19,8 @@ from collections import defaultdict
 
 from test_framework.test_framework import BitcoinTestFramework
 from test_framework.util import assert_equal, assert_raises_rpc_error
-from test_framework.qtumconfig import COINBASE_MATURITY, INITIAL_BLOCK_REWARD
-from test_framework.qtum import convert_btc_address_to_qtum
+from test_framework.eurekacoinconfig import COINBASE_MATURITY, INITIAL_BLOCK_REWARD
+from test_framework.eurekacoin import convert_btc_address_to_eurekacoin
 
 class WalletLabelsTest(BitcoinTestFramework):
     def set_test_params(self):
@@ -68,7 +68,7 @@ class WalletLabelsTest(BitcoinTestFramework):
         # send 50 from each address to a third address not in this wallet
         # There's some fee that will come back to us when the miner reward
         # matures.
-        common_address = convert_btc_address_to_qtum("msf4WtN1YQKXvNtvdFYt9JBnUD2FB41kjr")
+        common_address = convert_btc_address_to_eurekacoin("msf4WtN1YQKXvNtvdFYt9JBnUD2FB41kjr")
         txid = node.sendmany(
             fromaccount="",
             amounts={common_address: 2*INITIAL_BLOCK_REWARD},

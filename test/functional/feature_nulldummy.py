@@ -19,7 +19,7 @@ from test_framework.script import CScript
 from test_framework.test_framework import BitcoinTestFramework
 from test_framework.util import assert_equal, assert_raises_rpc_error, bytes_to_hex_str
 import time
-from test_framework.qtumconfig import *
+from test_framework.eurekacoinconfig import *
 
 NULLDUMMY_ERROR = "non-mandatory-script-verify-flag (Dummy CHECKMULTISIG argument must be zero) (code 64)"
 

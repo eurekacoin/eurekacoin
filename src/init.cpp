@@ -199,7 +199,7 @@ void Shutdown()
     /// for example if the data directory was found to be locked.
     /// Be sure that anything that writes files or flushes caches only does this if the respective
     /// module was initialized.
-    RenameThread("qtum-shutoff");
+    RenameThread("eurekacoin-shutoff");
     mempool.AddTransactionsUpdated(1);
 
     StopHTTPRPC();
@@ -547,8 +547,8 @@ void SetupServerArgs()
 
 std::string LicenseInfo()
 {
-    const std::string URL_SOURCE_CODE = "<https://github.com/qtumproject/qtum>";
-    const std::string URL_WEBSITE = "<https://qtum.org>";
+    const std::string URL_SOURCE_CODE = "<https://github.com/eurekacoin/eurekacoin>";
+    const std::string URL_WEBSITE = "<https://eurekacoin.org>";
 
     return CopyrightHolders(strprintf(_("Copyright (C) %i"), COPYRIGHT_YEAR) + " ") + "\n" +
            "\n" +
@@ -1261,7 +1261,7 @@ bool AppInitMain()
         }
     }
 
-////////////////////////////////////////////////////////////////////// // qtum
+////////////////////////////////////////////////////////////////////// // eurekacoin
     dev::g_logPost = [&](std::string const& s, char const* c){ g_logger->LogPrintStr(s + '\n', true); };
     dev::g_logPost(std::string("\n\n\n\n\n\n\n\n\n\n"), NULL);
 //////////////////////////////////////////////////////////////////////
@@ -1557,7 +1557,7 @@ bool AppInitMain()
                     assert(chainActive.Tip() != nullptr);
                 }
 
-                /////////////////////////////////////////////////////////// qtum
+                /////////////////////////////////////////////////////////// eurekacoin
                 if((gArgs.IsArgSet("-dgpstorage") && gArgs.IsArgSet("-dgpevm")) || (!gArgs.IsArgSet("-dgpstorage") && gArgs.IsArgSet("-dgpevm")) ||
                   (!gArgs.IsArgSet("-dgpstorage") && !gArgs.IsArgSet("-dgpevm"))){
                     fGettingValuesDGP = true;
@@ -1566,16 +1566,16 @@ bool AppInitMain()
                 }
 
                 dev::eth::Ethash::init();
-                fs::path qtumStateDir = GetDataDir() / "stateQtum";
-                bool fStatus = fs::exists(qtumStateDir);
-                const std::string dirQtum(qtumStateDir.string());
+                fs::path eurekacoinStateDir = GetDataDir() / "stateEurekaCoin";
+                bool fStatus = fs::exists(eurekacoinStateDir);
+                const std::string dirEurekaCoin(eurekacoinStateDir.string());
                 const dev::h256 hashDB(dev::sha3(dev::rlp("")));
-                dev::eth::BaseState existsQtumstate = fStatus ? dev::eth::BaseState::PreExisting : dev::eth::BaseState::Empty;
-                globalState = std::unique_ptr<QtumState>(new QtumState(dev::u256(0), QtumState::openDB(dirQtum, hashDB, dev::WithExisting::Trust), dirQtum, existsQtumstate));
-                dev::eth::ChainParams cp((dev::eth::genesisInfo(dev::eth::Network::qtumMainNetwork)));
+                dev::eth::BaseState existsEurekaCoinstate = fStatus ? dev::eth::BaseState::PreExisting : dev::eth::BaseState::Empty;
+                globalState = std::unique_ptr<EurekaCoinState>(new EurekaCoinState(dev::u256(0), EurekaCoinState::openDB(dirEurekaCoin, hashDB, dev::WithExisting::Trust), dirEurekaCoin, existsEurekaCoinstate));
+                dev::eth::ChainParams cp((dev::eth::genesisInfo(dev::eth::Network::eurekacoinMainNetwork)));
                 globalSealEngine = std::unique_ptr<dev::eth::SealEngineFace>(cp.createSealEngine());
 
-                pstorageresult.reset(new StorageResults(qtumStateDir.string()));
+                pstorageresult.reset(new StorageResults(eurekacoinStateDir.string()));
                 if (fReset) {
                     pstorageresult->wipeResults();
                 }

@@ -66,12 +66,12 @@
         <translation>收款地址</translation>
     </message>
     <message>
-        <source>These are your Qtum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>这些是你要付款过去的QTUM地址。在付钱之前，务必要检查金额和收款地址是否正确。</translation>
+        <source>These are your EurekaCoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>这些是你要付款过去的EUREKACOIN地址。在付钱之前，务必要检查金额和收款地址是否正确。</translation>
     </message>
     <message>
-        <source>These are your Qtum addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>这些是你用来收款的QTUM地址。建议在每次交易时，都使用一个新的收款地址。</translation>
+        <source>These are your EurekaCoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>这些是你用来收款的EUREKACOIN地址。建议在每次交易时，都使用一个新的收款地址。</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -176,8 +176,8 @@
         <translation>确认钱包加密</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
-        <translation>警告: 如果把钱包加密后又忘记密码，你就会从此&lt;b&gt;失去其中所有的QTUM了&lt;/b&gt;！</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR EUREKACOINS&lt;/b&gt;!</source>
+        <translation>警告: 如果把钱包加密后又忘记密码，你就会从此&lt;b&gt;失去其中所有的EUREKACOIN了&lt;/b&gt;！</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -188,7 +188,7 @@
         <translation>钱包已加密</translation>
     </message>
     <message>
-        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your qtums from being stolen by malware infecting your computer.</source>
+        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your eurekacoins from being stolen by malware infecting your computer.</source>
         <translation>%1 现在要关闭，以完成加密过程。请注意，加密钱包不能完全防止入侵你的电脑的恶意程序偷取钱币。</translation>
     </message>
     <message>
@@ -240,7 +240,7 @@
     </message>
 </context>
 <context>
-    <name>QtumGUI</name>
+    <name>EurekaCoinGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>消息签名(&amp;M)...</translation>
@@ -346,8 +346,8 @@
         <translation>正在为数据块重建索引...</translation>
     </message>
     <message>
-        <source>Send coins to a Qtum address</source>
-        <translation>向一个QTUM地址发送QTUM</translation>
+        <source>Send coins to a EurekaCoin address</source>
+        <translation>向一个EUREKACOIN地址发送EUREKACOIN</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -370,8 +370,8 @@
         <translation>验证消息(&amp;V)...</translation>
     </message>
     <message>
-        <source>Qtum</source>
-        <translation>QTUM</translation>
+        <source>EurekaCoin</source>
+        <translation>EUREKACOIN</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -398,12 +398,12 @@
         <translation>对钱包中的私钥加密</translation>
     </message>
     <message>
-        <source>Sign messages with your Qtum addresses to prove you own them</source>
-        <translation>用QTUM地址关联的私钥为消息签名，以证明您拥有这个QTUM地址</translation>
+        <source>Sign messages with your EurekaCoin addresses to prove you own them</source>
+        <translation>用EUREKACOIN地址关联的私钥为消息签名，以证明您拥有这个EUREKACOIN地址</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Qtum addresses</source>
-        <translation>校验消息，确保该消息是由指定的QTUM地址所有者签名的</translation>
+        <source>Verify messages to ensure they were signed with specified EurekaCoin addresses</source>
+        <translation>校验消息，确保该消息是由指定的EUREKACOIN地址所有者签名的</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -422,8 +422,8 @@
         <translation>分页工具栏</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and qtum: URIs)</source>
-        <translation>请求支付 (生成二维码和 qtum: URI)</translation>
+        <source>Request payments (generates QR codes and eurekacoin: URIs)</source>
+        <translation>请求支付 (生成二维码和 eurekacoin: URI)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -434,8 +434,8 @@
         <translation>显示用过的接收地址和标签的列表</translation>
     </message>
     <message>
-        <source>Open a qtum: URI or payment request</source>
-        <translation>打开一个 qtum: URI 或支付请求</translation>
+        <source>Open a eurekacoin: URI or payment request</source>
+        <translation>打开一个 eurekacoin: URI 或支付请求</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -478,7 +478,7 @@
         <translation>已是最新</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Qtum command-line options</source>
+        <source>Show the %1 help message to get a list with possible EurekaCoin command-line options</source>
         <translation>显示 %1 帮助信息，获取可用命令行选项列表</translation>
     </message>
     <message>
@@ -548,7 +548,7 @@
         <translation>钱包已被&lt;b&gt;加密&lt;/b&gt;，当前为&lt;b&gt;锁定&lt;/b&gt;状态</translation>
     </message>
     <message>
-        <source>A fatal error occurred. Qtum can no longer continue safely and will quit.</source>
+        <source>A fatal error occurred. EurekaCoin can no longer continue safely and will quit.</source>
         <translation>发生严重错误。客户端无法安全地继续运行，即将退出。</translation>
     </message>
 </context>
@@ -738,8 +738,8 @@
         <translation>编辑付款地址</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Qtum address.</source>
-        <translation>输入的地址 %1 并不是有效的QTUM地址。</translation>
+        <source>The entered address "%1" is not a valid EurekaCoin address.</source>
+        <translation>输入的地址 %1 并不是有效的EUREKACOIN地址。</translation>
     </message>
     <message>
         <source>Could not unlock wallet.</source>
@@ -823,8 +823,8 @@
         <translation>使用自定义的数据目录：</translation>
     </message>
     <message>
-        <source>Qtum</source>
-        <translation>QTUM</translation>
+        <source>EurekaCoin</source>
+        <translation>EUREKACOIN</translation>
     </message>
     <message>
         <source>At least %1 GB of data will be stored in this directory, and it will grow over time.</source>
@@ -835,8 +835,8 @@
         <translation>会在此目录中存储约 %1 GB 的数据。</translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Qtum block chain.</source>
-        <translation>%1 将会下载并存储QTUM区块链。</translation>
+        <source>%1 will download and store a copy of the EurekaCoin block chain.</source>
+        <translation>%1 将会下载并存储EUREKACOIN区块链。</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -858,11 +858,11 @@
         <translation>表单</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the qtum network, as detailed below.</source>
-        <translation>近期交易可能尚未显示，因此当前余额可能不准确。以上信息将在与QTUM网络完全同步后更正。详情如下</translation>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the eurekacoin network, as detailed below.</source>
+        <translation>近期交易可能尚未显示，因此当前余额可能不准确。以上信息将在与EUREKACOIN网络完全同步后更正。详情如下</translation>
     </message>
     <message>
-        <source>Attempting to spend qtums that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <source>Attempting to spend eurekacoins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
         <translation>尝试使用受未可见交易影响的余额将不被网络接受。</translation>
     </message>
     <message>
@@ -1032,8 +1032,8 @@
         <translation>使用未经确认的零钱(&amp;S)</translation>
     </message>
     <message>
-        <source>Automatically open the Qtum client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>自动在路由器中打开QTUM端口。只有当您的路由器开启了 UPnP 选项时此功能才有效。</translation>
+        <source>Automatically open the EurekaCoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>自动在路由器中打开EUREKACOIN端口。只有当您的路由器开启了 UPnP 选项时此功能才有效。</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1048,8 +1048,8 @@
         <translation>允许流入连接(&amp;G)</translation>
     </message>
     <message>
-        <source>Connect to the Qtum network through a SOCKS5 proxy.</source>
-        <translation>通过 SOCKS5 代理连接QTUM网络。</translation>
+        <source>Connect to the EurekaCoin network through a SOCKS5 proxy.</source>
+        <translation>通过 SOCKS5 代理连接EUREKACOIN网络。</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1084,8 +1084,8 @@
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the Qtum network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>在 Tor 匿名网络下通过不同的 SOCKS5 代理连接QTUM网络</translation>
+        <source>Connect to the EurekaCoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>在 Tor 匿名网络下通过不同的 SOCKS5 代理连接EUREKACOIN网络</translation>
     </message>
     <message>
         <source>&amp;Window</source>
@@ -1117,11 +1117,11 @@
     </message>
     <message>
         <source>&amp;Unit to show amounts in:</source>
-        <translation>QTUM金额单位(&amp;U)：</translation>
+        <translation>EUREKACOIN金额单位(&amp;U)：</translation>
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>选择QTUM单位。</translation>
+        <translation>选择EUREKACOIN单位。</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -1191,8 +1191,8 @@
         <translation>表单</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Qtum network after a connection is established, but this process has not completed yet.</source>
-        <translation>现在显示的消息可能是过期的。在连接上QTUM网络节点后，您的钱包将自动与网络同步，但是这个过程还没有完成。</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the EurekaCoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>现在显示的消息可能是过期的。在连接上EUREKACOIN网络节点后，您的钱包将自动与网络同步，但是这个过程还没有完成。</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1266,8 +1266,8 @@
         <translation>要求付款时发生错误</translation>
     </message>
     <message>
-        <source>Cannot start qtum: click-to-pay handler</source>
-        <translation>无法启动 qtum 协议的“
+        <source>Cannot start eurekacoin: click-to-pay handler</source>
+        <translation>无法启动 eurekacoin 协议的“
 一键支付”处理器</translation>
     </message>
     <message>
@@ -1283,8 +1283,8 @@
         <translation>无效的付款地址 %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Qtum address or malformed URI parameters.</source>
-        <translation>无法解析 URI 地址！可能是因为QTUM地址无效，或是 URI 参数格式错误。</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid EurekaCoin address or malformed URI parameters.</source>
+        <translation>无法解析 URI 地址！可能是因为EUREKACOIN地址无效，或是 URI 参数格式错误。</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -1381,8 +1381,8 @@
         <translation>金额</translation>
     </message>
     <message>
-        <source>Enter a Qtum address (e.g. %1)</source>
-        <translation>请输入一个QTUM地址 (例如 %1)</translation>
+        <source>Enter a EurekaCoin address (e.g. %1)</source>
+        <translation>请输入一个EUREKACOIN地址 (例如 %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1773,8 +1773,8 @@
         <translation>消息(&amp;M)：</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Qtum network.</source>
-        <translation>可在付款请求上备注一条信息，在打开付款请求时可以看到。注意：该消息不是通过QTUM网络传送。</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the EurekaCoin network.</source>
+        <translation>可在付款请求上备注一条信息，在打开付款请求时可以看到。注意：该消息不是通过EUREKACOIN网络传送。</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -1935,7 +1935,7 @@
     <name>SendCoinsDialog</name>
     <message>
         <source>Send Coins</source>
-        <translation>发送QTUM</translation>
+        <translation>发送EUREKACOIN</translation>
     </message>
     <message>
         <source>Coin Control Features</source>
@@ -2014,7 +2014,7 @@
         <translation>隐藏</translation>
     </message>
     <message>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for qtum transactions than the network can process.</source>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for eurekacoin transactions than the network can process.</source>
         <translation>交易量小时允许只支付最小交易费。但是请注意，当交易量大到超出网络可处理时您的交易可能永远无法确认。</translation>
     </message>
     <message>
@@ -2178,8 +2178,8 @@
         <translation>只支付必要费用 %1</translation>
     </message>
     <message>
-        <source>Warning: Invalid Qtum address</source>
-        <translation>警告: QTUM地址无效</translation>
+        <source>Warning: Invalid EurekaCoin address</source>
+        <translation>警告: EUREKACOIN地址无效</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -2221,7 +2221,7 @@
         <translation>这是笔正常的支付。</translation>
     </message>
     <message>
-        <source>The Qtum address to send the payment to</source>
+        <source>The EurekaCoin address to send the payment to</source>
         <translation>付款目的地址</translation>
     </message>
     <message>
@@ -2241,8 +2241,8 @@
         <translation>移除此项</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less qtums than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation>交易费将从发送总额中扣除。接收人将收到比您在金额框中输入的更少的QTUM。如果选中了多个收件人，交易费平分。</translation>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less eurekacoins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <translation>交易费将从发送总额中扣除。接收人将收到比您在金额框中输入的更少的EUREKACOIN。如果选中了多个收件人，交易费平分。</translation>
     </message>
     <message>
         <source>S&amp;ubtract fee from amount</source>
@@ -2269,8 +2269,8 @@
         <translation>请为此地址输入一个标签以将它加入用过的地址列表</translation>
     </message>
     <message>
-        <source>A message that was attached to the qtum: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Qtum network.</source>
-        <translation>qtum:URI 附带的备注信息，将会和交易一起存储，备查。 注意：该消息不会通过QTUM网络传输。</translation>
+        <source>A message that was attached to the eurekacoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the EurekaCoin network.</source>
+        <translation>eurekacoin:URI 附带的备注信息，将会和交易一起存储，备查。 注意：该消息不会通过EUREKACOIN网络传输。</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -2314,11 +2314,11 @@
         <translation>签名消息(&amp;S)</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive qtums sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation>您可以用你的地址对消息/协议进行签名，以证明您可以接收发送到该地址的QTUM。注意不要对任何模棱两可或者随机的消息进行签名，以免遭受钓鱼式攻击。请确保消息内容准确的表达了您的真实意愿。</translation>
+        <source>You can sign messages/agreements with your addresses to prove you can receive eurekacoins sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <translation>您可以用你的地址对消息/协议进行签名，以证明您可以接收发送到该地址的EUREKACOIN。注意不要对任何模棱两可或者随机的消息进行签名，以免遭受钓鱼式攻击。请确保消息内容准确的表达了您的真实意愿。</translation>
     </message>
     <message>
-        <source>The Qtum address to sign the message with</source>
+        <source>The EurekaCoin address to sign the message with</source>
         <translation>用来对消息签名的地址 </translation>
     </message>
     <message>
@@ -2350,7 +2350,7 @@
         <translation>复制当前签名至剪切板</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Qtum address</source>
+        <source>Sign the message to prove you own this EurekaCoin address</source>
         <translation>签名消息，证明这个地址属于您。</translation>
     </message>
     <message>
@@ -2374,12 +2374,12 @@
         <translation>请在下面输入接收者地址、消息（确保换行符、空格符、制表符等完全相同）和签名以验证消息。请仔细核对签名信息，以提防中间人攻击。请注意，这只是证明接收方签名的地址，它不能证明任何交易！</translation>
     </message>
     <message>
-        <source>The Qtum address the message was signed with</source>
+        <source>The EurekaCoin address the message was signed with</source>
         <translation>消息使用的签名地址</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Qtum address</source>
-        <translation>验证消息，确保消息是由指定的QTUM地址签名过的。</translation>
+        <source>Verify the message to ensure it was signed with the specified EurekaCoin address</source>
+        <translation>验证消息，确保消息是由指定的EUREKACOIN地址签名过的。</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -2584,7 +2584,7 @@
     </message>
     <message>
         <source>Generated coins must mature %1 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to "not accepted" and it won't be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
-        <translation>生成的QTUM在可以使用前必须有 %1 个成熟的区块。当您生成了此区块后，它将被广播到网络中以加入区块链。如果它未成功进入区块链，其状态将变更为“不接受”并且不可使用。这可能偶尔会发生，如果另一个节点比你早几秒钟成功生成一个区块。</translation>
+        <translation>生成的EUREKACOIN在可以使用前必须有 %1 个成熟的区块。当您生成了此区块后，它将被广播到网络中以加入区块链。如果它未成功进入区块链，其状态将变更为“不接受”并且不可使用。这可能偶尔会发生，如果另一个节点比你早几秒钟成功生成一个区块。</translation>
     </message>
     <message>
         <source>Debug information</source>
@@ -2902,7 +2902,7 @@
     <name>WalletModel</name>
     <message>
         <source>Send Coins</source>
-        <translation>发送QTUM</translation>
+        <translation>发送EUREKACOIN</translation>
     </message>
     <message>
         <source>Fee bump error</source>
@@ -2977,7 +2977,7 @@
     </message>
     </context>
 <context>
-    <name>qtum-core</name>
+    <name>eurekacoin-core</name>
     <message>
         <source>Distributed under the MIT software license, see the accompanying file %s or %s</source>
         <translation>在MIT协议下分发，参见附带的 %s 文件或 %s</translation>
@@ -3007,8 +3007,8 @@
         <translation>无法启动HTTP服务，查看日志获取更多信息</translation>
     </message>
     <message>
-        <source>Qtum Core</source>
-        <translation>Qtum Core</translation>
+        <source>EurekaCoin Core</source>
+        <translation>EurekaCoin Core</translation>
     </message>
     <message>
         <source>The %s developers</source>

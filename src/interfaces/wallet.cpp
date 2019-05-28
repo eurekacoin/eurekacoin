@@ -490,7 +490,7 @@ public:
         LOCK2(::cs_main, m_wallet.cs_wallet);
         return m_wallet.GetCredit(txout, filter);
     }
-    bool isUnspentAddress(const std::string &qtumAddress) override
+    bool isUnspentAddress(const std::string &eurekacoinAddress) override
     {
         LOCK2(::cs_main, m_wallet.cs_wallet);
 
@@ -502,7 +502,7 @@ public:
             const CScript& scriptPubKey = out.tx->tx->vout[out.i].scriptPubKey;
             bool fValidAddress = ExtractDestination(scriptPubKey, address);
 
-            if(fValidAddress && EncodeDestination(address) == qtumAddress && out.tx->tx->vout[out.i].nValue)
+            if(fValidAddress && EncodeDestination(address) == eurekacoinAddress && out.tx->tx->vout[out.i].nValue)
             {
                 return true;
             }

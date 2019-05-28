@@ -19,7 +19,7 @@ from test_framework.util import (
     assert_equal,
     wait_until,
 )
-from test_framework.qtumconfig import *
+from test_framework.eurekacoinconfig import *
 
 
 class InvalidTxRequestTest(BitcoinTestFramework):

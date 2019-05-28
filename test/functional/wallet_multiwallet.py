@@ -17,7 +17,7 @@ from test_framework.util import (
     assert_raises_rpc_error,
 )
 
-from test_framework.qtumconfig import INITIAL_BLOCK_REWARD, COINBASE_MATURITY
+from test_framework.eurekacoinconfig import INITIAL_BLOCK_REWARD, COINBASE_MATURITY
 
 class MultiWalletTest(BitcoinTestFramework):
     def set_test_params(self):

@@ -6,8 +6,8 @@
 
 from test_framework.test_framework import BitcoinTestFramework
 from test_framework.util import assert_equal, assert_raises_rpc_error
-from test_framework.qtumconfig import *
-from test_framework.qtum import convert_btc_address_to_qtum
+from test_framework.eurekacoinconfig import *
+from test_framework.eurekacoin import convert_btc_address_to_eurekacoin
 
 
 class SignRawTransactionsTest(BitcoinTestFramework):
@@ -36,7 +36,7 @@ class SignRawTransactionsTest(BitcoinTestFramework):
              'scriptPubKey': '76a914669b857c03a5ed269d5d85a1ffac9ed5d663072788ac'},
         ]
 
-        outputs = {convert_btc_address_to_qtum('mpLQjfK79b7CCV4VMJWEWAj5Mpx8Up5zxB'): 0.1}
+        outputs = {convert_btc_address_to_eurekacoin('mpLQjfK79b7CCV4VMJWEWAj5Mpx8Up5zxB'): 0.1}
 
         rawTx = self.nodes[0].createrawtransaction(inputs, outputs)
         rawTxSigned = self.nodes[0].signrawtransactionwithkey(rawTx, privKeys, inputs)
@@ -88,7 +88,7 @@ class SignRawTransactionsTest(BitcoinTestFramework):
              'scriptPubKey': 'badbadbadbad'}
         ]
 
-        outputs = {convert_btc_address_to_qtum('mpLQjfK79b7CCV4VMJWEWAj5Mpx8Up5zxB'): 0.1}
+        outputs = {convert_btc_address_to_eurekacoin('mpLQjfK79b7CCV4VMJWEWAj5Mpx8Up5zxB'): 0.1}
 
         rawTx = self.nodes[0].createrawtransaction(inputs, outputs)
 

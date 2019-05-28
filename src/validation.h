@@ -33,17 +33,17 @@
 
 #include <consensus/consensus.h>
 
-/////////////////////////////////////////// qtum
-#include <qtum/qtumstate.h>
-#include <qtum/qtumDGP.h>
+/////////////////////////////////////////// eurekacoin
+#include <eurekacoin/eurekacoinstate.h>
+#include <eurekacoin/eurekacoinDGP.h>
 #include <libethereum/ChainParams.h>
 #include <libethashseal/Ethash.h>
 #include <libethashseal/GenesisInfo.h>
 #include <script/standard.h>
-#include <qtum/storageresults.h>
+#include <eurekacoin/storageresults.h>
 
 
-extern std::unique_ptr<QtumState> globalState;
+extern std::unique_ptr<EurekaCoinState> globalState;
 extern std::shared_ptr<dev::eth::SealEngineFace> globalSealEngine;
 extern bool fRecordLogOpcodes;
 extern bool fIsVMlogFile;
@@ -51,7 +51,7 @@ extern bool fGettingValuesDGP;
 
 struct EthTransactionParams;
 using valtype = std::vector<unsigned char>;
-using ExtractQtumTX = std::pair<std::vector<QtumTransaction>, std::vector<EthTransactionParams>>;
+using ExtractEurekaCoinTX = std::pair<std::vector<EurekaCoinTransaction>, std::vector<EthTransactionParams>>;
 ///////////////////////////////////////////
 
 class CBlockIndex;
@@ -172,7 +172,7 @@ static const uint64_t DEFAULT_GAS_LIMIT_OP_SEND=250000;
 static const CAmount DEFAULT_GAS_PRICE=0.00000040*COIN;
 static const CAmount MAX_RPC_GAS_PRICE=0.00000100*COIN;
 
-static const size_t MAX_CONTRACT_VOUTS = 1000; // qtum
+static const size_t MAX_CONTRACT_VOUTS = 1000; // eurekacoin
 
 struct BlockHasher
 {
@@ -355,7 +355,7 @@ std::string FormatStateMessage(const CValidationState &state);
 /** Get the BIP9 state for a given deployment at the current tip. */
 ThresholdState VersionBitsTipState(const Consensus::Params& params, Consensus::DeploymentPos pos);
 
-//////////////////////////////////////////////////////////// // qtum
+//////////////////////////////////////////////////////////// // eurekacoin
 struct CHeightTxIndexIteratorKey {
     unsigned int height;
 
@@ -620,7 +620,7 @@ inline bool IsBlockPruned(const CBlockIndex* pblockindex)
 
 bool CheckReward(const CBlock& block, CValidationState& state, int nHeight, const Consensus::Params& consensusParams, CAmount nFees, CAmount gasRefunds, CAmount nActualStakeReward, const std::vector<CTxOut>& vouts);
 
-//////////////////////////////////////////////////////// qtum
+//////////////////////////////////////////////////////// eurekacoin
 bool GetSpentCoinFromTip(COutPoint prevout, Coin* coin);
 
 std::vector<ResultExecute> CallContract(const dev::Address& addrContract, std::vector<unsigned char> opcode, const dev::Address& sender = dev::Address(), uint64_t gasLimit=0);
@@ -631,8 +631,8 @@ bool CheckMinGasPrice(std::vector<EthTransactionParams>& etps, const uint64_t& m
 
 struct ByteCodeExecResult;
 
-void EnforceContractVoutLimit(ByteCodeExecResult& bcer, ByteCodeExecResult& bcerOut, const dev::h256& oldHashQtumRoot,
-    const dev::h256& oldHashStateRoot, const std::vector<QtumTransaction>& transactions);
+void EnforceContractVoutLimit(ByteCodeExecResult& bcer, ByteCodeExecResult& bcerOut, const dev::h256& oldHashEurekaCoinRoot,
+    const dev::h256& oldHashStateRoot, const std::vector<EurekaCoinTransaction>& transactions);
 
 void writeVMlog(const std::vector<ResultExecute>& res, const CTransaction& tx = CTransaction(), const CBlock& block = CBlock());
 
@@ -659,13 +659,13 @@ struct ByteCodeExecResult{
     std::vector<CTransaction> valueTransfers;
 };
 
-class QtumTxConverter{
+class EurekaCoinTxConverter{
 
 public:
 
-    QtumTxConverter(CTransaction tx, CCoinsViewCache* v = NULL, const std::vector<CTransactionRef>* blockTxs = NULL) : txBit(tx), view(v), blockTransactions(blockTxs){}
+    EurekaCoinTxConverter(CTransaction tx, CCoinsViewCache* v = NULL, const std::vector<CTransactionRef>* blockTxs = NULL) : txBit(tx), view(v), blockTransactions(blockTxs){}
 
-    bool extractionQtumTransactions(ExtractQtumTX& qtumTx);
+    bool extractionEurekaCoinTransactions(ExtractEurekaCoinTX& eurekacoinTx);
 
 private:
 
@@ -673,7 +673,7 @@ private:
 
     bool parseEthTXParams(EthTransactionParams& params);
 
-    QtumTransaction createEthTX(const EthTransactionParams& etp, const uint32_t nOut);
+    EurekaCoinTransaction createEthTX(const EthTransactionParams& etp, const uint32_t nOut);
 
     const CTransaction txBit;
     const CCoinsViewCache* view;
@@ -687,7 +687,7 @@ class ByteCodeExec {
 
 public:
 
-    ByteCodeExec(const CBlock& _block, std::vector<QtumTransaction> _txs, const uint64_t _blockGasLimit, CBlockIndex* _pindex) : txs(_txs), block(_block), blockGasLimit(_blockGasLimit), pindex(_pindex) {}
+    ByteCodeExec(const CBlock& _block, std::vector<EurekaCoinTransaction> _txs, const uint64_t _blockGasLimit, CBlockIndex* _pindex) : txs(_txs), block(_block), blockGasLimit(_blockGasLimit), pindex(_pindex) {}
 
     bool performByteCode(dev::eth::Permanence type = dev::eth::Permanence::Committed);
 
@@ -701,7 +701,7 @@ private:
 
     dev::Address EthAddrFromScript(const CScript& scriptIn);
 
-    std::vector<QtumTransaction> txs;
+    std::vector<EurekaCoinTransaction> txs;
 
     std::vector<ResultExecute> result;
 

@@ -1,0 +1,6 @@
+usr/local/bin/eurekacoin-qt usr/bin
+share/pixmaps/eurekacoin32.xpm usr/share/pixmaps
+share/pixmaps/eurekacoin16.xpm usr/share/pixmaps
+share/pixmaps/eurekacoin128.png usr/share/pixmaps
+debian/eurekacoin-qt.desktop usr/share/applications
+debian/eurekacoin-qt.protocol usr/share/kde4/services/

@@ -33,7 +33,7 @@ from .util import (
     sync_blocks,
     sync_mempools,
 )
-from .qtumconfig import COINBASE_MATURITY
+from .eurekacoinconfig import COINBASE_MATURITY
 
 class TestStatus(Enum):
     PASSED = 1
@@ -138,8 +138,8 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
 
         config = configparser.ConfigParser()
         config.read_file(open(self.options.configfile))
-        self.options.bitcoind = os.getenv("BITCOIND", default=config["environment"]["BUILDDIR"] + '/src/qtumd' + config["environment"]["EXEEXT"])
-        self.options.bitcoincli = os.getenv("BITCOINCLI", default=config["environment"]["BUILDDIR"] + '/src/qtum-cli' + config["environment"]["EXEEXT"])
+        self.options.bitcoind = os.getenv("BITCOIND", default=config["environment"]["BUILDDIR"] + '/src/eurekacoind' + config["environment"]["EXEEXT"])
+        self.options.bitcoincli = os.getenv("BITCOINCLI", default=config["environment"]["BUILDDIR"] + '/src/eurekacoin-cli' + config["environment"]["EXEEXT"])
 
         os.environ['PATH'] = os.pathsep.join([
             os.path.join(config['environment']['BUILDDIR'], 'src'),
@@ -492,7 +492,7 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
             for i in range(MAX_NODES):
                 os.rmdir(cache_path(i, 'wallets'))  # Remove empty wallets dir
                 for entry in os.listdir(cache_path(i)):
-                    if entry not in ['chainstate', 'blocks', 'stateQtum']:
+                    if entry not in ['chainstate', 'blocks', 'stateEurekaCoin']:
                         os.remove(cache_path(i, entry))
 
         for i in range(self.num_nodes):

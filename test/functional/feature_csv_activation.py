@@ -62,7 +62,7 @@ from test_framework.util import (
     hex_str_to_bytes,
     bytes_to_hex_str
 )
-from test_framework.qtumconfig import *
+from test_framework.eurekacoinconfig import *
 
 BASE_RELATIVE_LOCKTIME = 10
 SEQ_DISABLE_FLAG = 1 << 31

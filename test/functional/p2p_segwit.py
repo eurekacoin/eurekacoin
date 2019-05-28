@@ -84,7 +84,7 @@ from test_framework.util import (
     sync_mempools,
     Decimal
 )
-from test_framework.qtumconfig import *
+from test_framework.eurekacoinconfig import *
 from test_framework.messages import COIN
 
 # The versionbit bit used to signal activation of SegWit

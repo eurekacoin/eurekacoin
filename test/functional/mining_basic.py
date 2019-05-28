@@ -122,7 +122,7 @@ class MiningTest(BitcoinTestFramework):
         bad_block.hashMerkleRoot += 1
         assert_template(node, bad_block, 'bad-txnmrklroot', False)
 
-        # These tests do not apply to qtum since the timestamps are only checked for PoS blocks.
+        # These tests do not apply to eurekacoin since the timestamps are only checked for PoS blocks.
         #self.log.info("getblocktemplate: Test bad timestamps")
         #bad_block = copy.deepcopy(block)
         #bad_block.nTime = 2 ** 31 - 1

@@ -247,9 +247,9 @@ class NodeImpl : public Node
     {
         LOCK(::cs_main);
 
-        QtumDGP qtumDGP(globalState.get(), fGettingValuesDGP);
-        blockGasLimit = qtumDGP.getBlockGasLimit(chainActive.Height());
-        minGasPrice = CAmount(qtumDGP.getMinGasPrice(chainActive.Height()));
+        EurekaCoinDGP eurekacoinDGP(globalState.get(), fGettingValuesDGP);
+        blockGasLimit = eurekacoinDGP.getBlockGasLimit(chainActive.Height());
+        minGasPrice = CAmount(eurekacoinDGP.getMinGasPrice(chainActive.Height()));
         nGasPrice = (minGasPrice>DEFAULT_GAS_PRICE)?minGasPrice:DEFAULT_GAS_PRICE;
     }
     void getSyncInfo(int& numBlocks, bool& isSyncing)

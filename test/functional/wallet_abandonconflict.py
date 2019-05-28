@@ -14,7 +14,7 @@ from decimal import Decimal
 
 from test_framework.test_framework import BitcoinTestFramework
 from test_framework.util import assert_equal, assert_raises_rpc_error, connect_nodes, disconnect_nodes, sync_blocks, sync_mempools
-from test_framework.qtumconfig import *
+from test_framework.eurekacoinconfig import *
 
 class AbandonConflictTest(BitcoinTestFramework):
     def set_test_params(self):

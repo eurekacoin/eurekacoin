@@ -794,7 +794,7 @@ private:
      * Wallet staking coins.
      */
     boost::thread_group* stakeThread = nullptr;
-    void StakeQtums(bool fStake, CConnman* connman);
+    void StakeEurekaCoins(bool fStake, CConnman* connman);
 
 public:
     /*
@@ -1308,11 +1308,11 @@ public:
     /* Remove token entry from the wallet */
     bool RemoveTokenEntry(const uint256& tokenHash, bool fFlushOnClose=true);
 
-    /* Start staking qtums */
-    void StartStake(CConnman* connman) { StakeQtums(true, connman); }
+    /* Start staking eurekacoins */
+    void StartStake(CConnman* connman) { StakeEurekaCoins(true, connman); }
 
-    /* Stop staking qtums */
-    void StopStake() { StakeQtums(false, 0); }
+    /* Stop staking eurekacoins */
+    void StopStake() { StakeEurekaCoins(false, 0); }
 
     /* Clean token transaction entries in the wallet */
     bool CleanTokenTxEntries(bool fFlushOnClose=true);

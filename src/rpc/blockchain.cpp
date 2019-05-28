@@ -158,8 +158,8 @@ UniValue blockheaderToJSON(const CBlockIndex* blockindex)
     result.pushKV("difficulty", GetDifficulty(blockindex));
     result.pushKV("chainwork", blockindex->nChainWork.GetHex());
     result.pushKV("nTx", (uint64_t)blockindex->nTx);
-    result.pushKV("hashStateRoot", blockindex->hashStateRoot.GetHex()); // qtum
-    result.pushKV("hashUTXORoot", blockindex->hashUTXORoot.GetHex()); // qtum
+    result.pushKV("hashStateRoot", blockindex->hashStateRoot.GetHex()); // eurekacoin
+    result.pushKV("hashUTXORoot", blockindex->hashUTXORoot.GetHex()); // eurekacoin
 
     if (blockindex->pprev)
         result.pushKV("previousblockhash", blockindex->pprev->GetBlockHash().GetHex());
@@ -191,8 +191,8 @@ UniValue blockToJSON(const CBlock& block, const CBlockIndex* blockindex, bool tx
     result.pushKV("version", block.nVersion);
     result.pushKV("versionHex", strprintf("%08x", block.nVersion));
     result.pushKV("merkleroot", block.hashMerkleRoot.GetHex());
-    result.pushKV("hashStateRoot", block.hashStateRoot.GetHex()); // qtum
-    result.pushKV("hashUTXORoot", block.hashUTXORoot.GetHex()); // qtum
+    result.pushKV("hashStateRoot", block.hashStateRoot.GetHex()); // eurekacoin
+    result.pushKV("hashUTXORoot", block.hashUTXORoot.GetHex()); // eurekacoin
     UniValue txs(UniValue::VARR);
     for(const auto& tx : block.vtx)
     {
@@ -230,7 +230,7 @@ UniValue blockToJSON(const CBlock& block, const CBlockIndex* blockindex, bool tx
     return result;
 }
 
-//////////////////////////////////////////////////////////////////////////// // qtum
+//////////////////////////////////////////////////////////////////////////// // eurekacoin
 UniValue executionResultToJSON(const dev::eth::ExecutionResult& exRes)
 {
     UniValue result(UniValue::VOBJ);
@@ -1078,7 +1078,7 @@ static UniValue getblock(const JSONRPCRequest& request)
     return blockToJSON(block, pblockindex, verbosity >= 2);
 }
 
-////////////////////////////////////////////////////////////////////// // qtum
+////////////////////////////////////////////////////////////////////// // eurekacoin
 UniValue callcontract(const JSONRPCRequest& request)
 {
     if (request.fHelp || request.params.size() < 2)
@@ -1108,9 +1108,9 @@ UniValue callcontract(const JSONRPCRequest& request)
     
     dev::Address senderAddress;
     if(request.params.size() == 3){
-        CTxDestination qtumSenderAddress = DecodeDestination(request.params[2].get_str());
-        if (IsValidDestination(qtumSenderAddress)) {
-            const CKeyID *keyid = boost::get<CKeyID>(&qtumSenderAddress);
+        CTxDestination eurekacoinSenderAddress = DecodeDestination(request.params[2].get_str());
+        if (IsValidDestination(eurekacoinSenderAddress)) {
+            const CKeyID *keyid = boost::get<CKeyID>(&eurekacoinSenderAddress);
             senderAddress = dev::Address(HexStr(valtype(keyid->begin(),keyid->end())));
         }else{
             senderAddress = dev::Address(request.params[2].get_str());
@@ -1885,8 +1885,8 @@ UniValue gettxout(const JSONRPCRequest& request)
             "     \"hex\" : \"hex\",        (string) \n"
             "     \"reqSigs\" : n,          (numeric) Number of required signatures\n"
             "     \"type\" : \"pubkeyhash\", (string) The type, eg pubkeyhash\n"
-            "     \"addresses\" : [          (array of string) array of qtum addresses\n"
-            "        \"address\"     (string) qtum address\n"
+            "     \"addresses\" : [          (array of string) array of eurekacoin addresses\n"
+            "        \"address\"     (string) eurekacoin address\n"
             "        ,...\n"
             "     ]\n"
             "  },\n"

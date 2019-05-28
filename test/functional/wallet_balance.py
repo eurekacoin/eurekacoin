@@ -10,10 +10,10 @@ from test_framework.util import (
     assert_equal,
     assert_raises_rpc_error,
 )
-from test_framework.qtum import convert_btc_address_to_qtum
-from test_framework.qtumconfig import INITIAL_BLOCK_REWARD, COINBASE_MATURITY
+from test_framework.eurekacoin import convert_btc_address_to_eurekacoin
+from test_framework.eurekacoinconfig import INITIAL_BLOCK_REWARD, COINBASE_MATURITY
 
-RANDOM_COINBASE_ADDRESS = convert_btc_address_to_qtum('mneYUmWYsuk7kySiURxCi3AGxrAqZxLgPZ')
+RANDOM_COINBASE_ADDRESS = convert_btc_address_to_eurekacoin('mneYUmWYsuk7kySiURxCi3AGxrAqZxLgPZ')
 
 def create_transactions(node, address, amt, fees):
     # Create and sign raw transactions from node to address for amt.
@@ -52,7 +52,7 @@ class WalletTest(BitcoinTestFramework):
         assert_equal(len(self.nodes[0].listunspent()), 0)
         assert_equal(len(self.nodes[1].listunspent()), 0)
 
-        self.log.info("We use a third node here that sends 50 qtum to each of the two other nodes to keep compatibility with bitcoin")
+        self.log.info("We use a third node here that sends 50 eurekacoin to each of the two other nodes to keep compatibility with bitcoin")
 
         self.nodes[2].generate(1)
         self.sync_all()

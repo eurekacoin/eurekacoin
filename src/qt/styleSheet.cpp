@@ -16,7 +16,7 @@
 static const QString STYLE_FORMAT = ":/styles/%1";
 static const QColor LINK_COLOR = "#2d9ad0";
 
-class QtumStyle : public QProxyStyle
+class EurekaCoinStyle : public QProxyStyle
 {
 public:
 
@@ -98,9 +98,9 @@ void StyleSheet::setStyleSheet(QWidget *widget, const QString &style_name)
 void StyleSheet::setStyleSheet(QApplication *app, const QString& style_name)
 {
     QStyle* mainStyle = QStyleFactory::create("fusion");
-    QtumStyle* qtumStyle = new QtumStyle;
-    qtumStyle->setBaseStyle(mainStyle);
-    app->setStyle(qtumStyle);
+    EurekaCoinStyle* eurekacoinStyle = new EurekaCoinStyle;
+    eurekacoinStyle->setBaseStyle(mainStyle);
+    app->setStyle(eurekacoinStyle);
 
     QPalette mainPalette(app->palette());
     mainPalette.setColor(QPalette::Link, LINK_COLOR);

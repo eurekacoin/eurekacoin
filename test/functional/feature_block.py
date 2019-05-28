@@ -45,7 +45,7 @@ from test_framework.script import (
 )
 from test_framework.test_framework import BitcoinTestFramework
 from test_framework.util import assert_equal
-from test_framework.qtumconfig import *
+from test_framework.eurekacoinconfig import *
 
 MAX_BLOCK_SIGOPS = 20000
 
@@ -762,7 +762,7 @@ class FullBlockTest(BitcoinTestFramework):
         # not-fully-spent transaction in the same chain. To test, make identical coinbases;
         # the second one should be rejected.
         #
-        # QTUM: Since we enable BIP34 from block 0, this BIP30 test is no longer relevant. This test has therefore been removed.
+        # EUREKACOIN: Since we enable BIP34 from block 0, this BIP30 test is no longer relevant. This test has therefore been removed.
         #self.log.info("Reject a block with a transaction with a duplicate hash of a previous transaction (BIP30)")
         #self.move_tip(60)
         #b61 = self.next_block(61, spend=out[18])

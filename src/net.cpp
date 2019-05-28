@@ -1524,7 +1524,7 @@ static void ThreadMapPort()
             }
         }
 
-        std::string strDesc = "Qtum " + FormatFullVersion();
+        std::string strDesc = "EurekaCoin " + FormatFullVersion();
 
         do {
 #ifndef UPNPDISCOVER_SUCCESS

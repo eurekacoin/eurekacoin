@@ -46,10 +46,10 @@ static const int MAX_URI_LENGTH = 255;
 /* Number of frames in spinner animation */
 #define SPINNER_FRAMES 36
 
-#define QAPP_ORG_NAME "Qtum"
-#define QAPP_ORG_DOMAIN "qtum.org"
-#define QAPP_APP_NAME_DEFAULT "Qtum-Qt"
-#define QAPP_APP_NAME_TESTNET "Qtum-Qt-testnet"
-#define QAPP_APP_NAME_REGTEST "Qtum-Qt-regtest"
+#define QAPP_ORG_NAME "EurekaCoin"
+#define QAPP_ORG_DOMAIN "eurekacoin.org"
+#define QAPP_APP_NAME_DEFAULT "EurekaCoin-Qt"
+#define QAPP_APP_NAME_TESTNET "EurekaCoin-Qt-testnet"
+#define QAPP_APP_NAME_REGTEST "EurekaCoin-Qt-regtest"
 
 #endif // BITCOIN_QT_GUICONSTANTS_H

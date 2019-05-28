@@ -24,7 +24,7 @@
 #include <prevector.h>
 #include <span.h>
 
-static const unsigned int MAX_SIZE = 0x10000000; // Qtum: Increase max serialized size to 256mb
+static const unsigned int MAX_SIZE = 0x10000000; // EurekaCoin: Increase max serialized size to 256mb
 
 /**
  * Dummy data type to identify deserializing constructors.
@@ -89,7 +89,7 @@ template<typename Stream> inline void ser_writedata32(Stream &s, uint32_t obj)
     obj = htole32(obj);
     s.write((char*)&obj, 4);
 }
-///////////////////////////////////////////////// // qtum
+///////////////////////////////////////////////// // eurekacoin
 template<typename Stream> inline void ser_writedata32be(Stream &s, uint32_t obj)
 {
     obj = htobe32(obj);
@@ -125,7 +125,7 @@ template<typename Stream> inline uint32_t ser_readdata32(Stream &s)
     s.read((char*)&obj, 4);
     return le32toh(obj);
 }
-//////////////////////////////////////////////////////////////////// // qtum
+//////////////////////////////////////////////////////////////////// // eurekacoin
 template<typename Stream> inline uint32_t ser_readdata32be(Stream &s)
 {
     uint32_t obj;

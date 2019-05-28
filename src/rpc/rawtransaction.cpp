@@ -40,10 +40,10 @@
 
 static void TxToJSON(const CTransaction& tx, const uint256 hashBlock, UniValue& entry)
 {
-    // Call into TxToUniv() in qtum-common to decode the transaction hex.
+    // Call into TxToUniv() in eurekacoin-common to decode the transaction hex.
     //
     // Blockchain contextual information (confirmations and blocktime) is not
-    // available to code in qtum-common, so we query them here and push the
+    // available to code in eurekacoin-common, so we query them here and push the
     // data into the returned UniValue.
     TxToUniv(tx, uint256(), entry, true, RPCSerializationFlags());
 
@@ -84,7 +84,7 @@ static UniValue gethexaddress(const JSONRPCRequest& request) {
 
     CTxDestination dest = DecodeDestination(request.params[0].get_str());
     if (!IsValidDestination(dest)) {
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Qtum address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid EurekaCoin address");
     }
 
     const CKeyID *keyID = boost::get<CKeyID>(&dest);
@@ -179,7 +179,7 @@ static UniValue getrawtransaction(const JSONRPCRequest& request)
             "         \"reqSigs\" : n,            (numeric) The required sigs\n"
             "         \"type\" : \"pubkeyhash\",  (string) The type, eg 'pubkeyhash'\n"
             "         \"addresses\" : [           (json array of string)\n"
-            "           \"address\"        (string) qtum address\n"
+            "           \"address\"        (string) eurekacoin address\n"
             "           ,...\n"
             "         ]\n"
             "       }\n"
@@ -491,9 +491,9 @@ CMutableTransaction ConstructTransaction(const UniValue& inputs_in, const UniVal
 
             // Get dgp gas limit and gas price
             LOCK(cs_main);
-            QtumDGP qtumDGP(globalState.get(), fGettingValuesDGP);
-            uint64_t blockGasLimit = qtumDGP.getBlockGasLimit(chainActive.Height());
-            uint64_t minGasPrice = CAmount(qtumDGP.getMinGasPrice(chainActive.Height()));
+            EurekaCoinDGP eurekacoinDGP(globalState.get(), fGettingValuesDGP);
+            uint64_t blockGasLimit = eurekacoinDGP.getBlockGasLimit(chainActive.Height());
+            uint64_t minGasPrice = CAmount(eurekacoinDGP.getMinGasPrice(chainActive.Height()));
             CAmount nGasPrice = (minGasPrice>DEFAULT_GAS_PRICE)?minGasPrice:DEFAULT_GAS_PRICE;
 
             // Get the contract address
@@ -559,7 +559,7 @@ CMutableTransaction ConstructTransaction(const UniValue& inputs_in, const UniVal
         } else {
             CTxDestination destination = DecodeDestination(name_);
             if (!IsValidDestination(destination)) {
-                throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, std::string("Invalid Qtum address: ") + name_);
+                throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, std::string("Invalid EurekaCoin address: ") + name_);
             }
 
             if (!destinations.insert(destination).second) {
@@ -607,7 +607,7 @@ static UniValue createrawtransaction(const JSONRPCRequest& request)
             "That is, each address can only appear once and there can only be one 'data' object.\n"
             "   [\n"
             "    {\n"
-            "      \"address\": x.xxx,    (obj, optional) A key-value pair. The key (string) is the qtum address, the value (float or string) is the amount in " + CURRENCY_UNIT + "\n"
+            "      \"address\": x.xxx,    (obj, optional) A key-value pair. The key (string) is the eurekacoin address, the value (float or string) is the amount in " + CURRENCY_UNIT + "\n"
             "    },\n"
             "    {\n"
             "      \"data\": \"hex\"        (obj, optional) A key-value pair. The key must be \"data\", the value is hex encoded data\n"
@@ -616,7 +616,7 @@ static UniValue createrawtransaction(const JSONRPCRequest& request)
             "      \"contract\":{\n"
             "         \"contractAddress\":\"address\", (string, required) Valid contract address (valid hash160 hex data)\n"
             "         \"data\":\"hex\",                (string, required) Hex data to add in the call output\n"
-            "         \"amount\":x.xxx,                (numeric, optional) Value in QTUM to send with the call, should be a valid amount, default 0\n"
+            "         \"amount\":x.xxx,                (numeric, optional) Value in EUREKACOIN to send with the call, should be a valid amount, default 0\n"
             "         \"gasLimit\":x,                  (numeric, optional) The gas limit for the transaction\n"
             "         \"gasPrice\":x.xxx               (numeric, optional) The gas price for the transaction\n"
             "       } \n"
@@ -700,7 +700,7 @@ static UniValue decoderawtransaction(const JSONRPCRequest& request)
             "         \"reqSigs\" : n,            (numeric) The required sigs\n"
             "         \"type\" : \"pubkeyhash\",  (string) The type, eg 'pubkeyhash'\n"
             "         \"addresses\" : [           (json array of string)\n"
-            "           \"Q2tvKAXCxZjSmdNbao16dKXC8tRWfcF5oc\"   (string) qtum address\n"
+            "           \"Q2tvKAXCxZjSmdNbao16dKXC8tRWfcF5oc\"   (string) eurekacoin address\n"
             "           ,...\n"
             "         ]\n"
             "       }\n"
@@ -747,7 +747,7 @@ static UniValue decodescript(const JSONRPCRequest& request)
             "  \"type\":\"type\", (string) The output type\n"
             "  \"reqSigs\": n,    (numeric) The required signatures\n"
             "  \"addresses\": [   (json array of string)\n"
-            "     \"address\"     (string) qtum address\n"
+            "     \"address\"     (string) eurekacoin address\n"
             "     ,...\n"
             "  ],\n"
             "  \"p2sh\",\"address\" (string) address of P2SH script wrapping this redeem script (not returned if the script is already a P2SH).\n"
@@ -1199,7 +1199,7 @@ UniValue signrawtransaction(const JSONRPCRequest& request)
 
     if (!IsDeprecatedRPCEnabled("signrawtransaction")) {
         throw JSONRPCError(RPC_METHOD_DEPRECATED, "signrawtransaction is deprecated and will be fully removed in v0.18. "
-            "To use signrawtransaction in v0.17, restart qtumd with -deprecatedrpc=signrawtransaction.\n"
+            "To use signrawtransaction in v0.17, restart eurekacoind with -deprecatedrpc=signrawtransaction.\n"
             "Projects should transition to using signrawtransactionwithkey and signrawtransactionwithwallet before upgrading to v0.18");
     }
 
@@ -1430,7 +1430,7 @@ UniValue decodepsbt(const JSONRPCRequest& request)
     if (request.fHelp || request.params.size() != 1)
         throw std::runtime_error(
             "decodepsbt \"psbt\"\n"
-            "\nReturn a JSON object representing the serialized, base64-encoded partially signed Qtum transaction.\n"
+            "\nReturn a JSON object representing the serialized, base64-encoded partially signed EurekaCoin transaction.\n"
 
             "\nArguments:\n"
             "1. \"psbt\"            (string, required) The PSBT base64 string\n"
@@ -1455,7 +1455,7 @@ UniValue decodepsbt(const JSONRPCRequest& request)
             "          \"asm\" : \"asm\",            (string) The asm\n"
             "          \"hex\" : \"hex\",            (string) The hex\n"
             "          \"type\" : \"pubkeyhash\",    (string) The type, eg 'pubkeyhash'\n"
-            "          \"address\" : \"address\"     (string) Qtum address if there is one\n"
+            "          \"address\" : \"address\"     (string) EurekaCoin address if there is one\n"
             "        }\n"
             "      },\n"
             "      \"partial_signatures\" : {             (json object, optional)\n"
@@ -1712,7 +1712,7 @@ UniValue combinepsbt(const JSONRPCRequest& request)
     if (request.fHelp || request.params.size() != 1)
         throw std::runtime_error(
             "combinepsbt [\"psbt\",...]\n"
-            "\nCombine multiple partially signed Qtum transactions into one transaction.\n"
+            "\nCombine multiple partially signed EurekaCoin transactions into one transaction.\n"
             "Implements the Combiner role.\n"
             "\nArguments:\n"
             "1. \"txs\"                   (string) A json array of base64 strings of partially signed transactions\n"
@@ -1846,7 +1846,7 @@ UniValue createpsbt(const JSONRPCRequest& request)
                             "That is, each address can only appear once and there can only be one 'data' object.\n"
                             "   [\n"
                             "    {\n"
-                            "      \"address\": x.xxx,    (obj, optional) A key-value pair. The key (string) is the qtum address, the value (float or string) is the amount in " + CURRENCY_UNIT + "\n"
+                            "      \"address\": x.xxx,    (obj, optional) A key-value pair. The key (string) is the eurekacoin address, the value (float or string) is the amount in " + CURRENCY_UNIT + "\n"
                             "    },\n"
                             "    {\n"
                             "      \"data\": \"hex\"        (obj, optional) A key-value pair. The key must be \"data\", the value is hex encoded data\n"

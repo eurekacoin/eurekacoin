@@ -165,7 +165,7 @@ static UniValue generatetoaddress(const JSONRPCRequest& request)
             "\nMine blocks immediately to a specified address (before the RPC call returns)\n"
             "\nArguments:\n"
             "1. nblocks      (numeric, required) How many blocks are generated immediately.\n"
-            "2. address      (string, required) The address to send the newly generated qtum to.\n"
+            "2. address      (string, required) The address to send the newly generated eurekacoin to.\n"
             "3. maxtries     (numeric, optional) How many iterations to try (default = 1000000).\n"
             "\nResult:\n"
             "[ blockhashes ]     (array) hashes of blocks generated\n"
@@ -534,10 +534,10 @@ static UniValue getblocktemplate(const JSONRPCRequest& request)
         throw JSONRPCError(RPC_CLIENT_P2P_DISABLED, "Error: Peer-to-peer functionality missing or disabled");
 
     if (g_connman->GetNodeCount(CConnman::CONNECTIONS_ALL) == 0)
-        throw JSONRPCError(RPC_CLIENT_NOT_CONNECTED, "Qtum is not connected!");
+        throw JSONRPCError(RPC_CLIENT_NOT_CONNECTED, "EurekaCoin is not connected!");
 
     if (IsInitialBlockDownload())
-        throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, "Qtum is downloading blocks...");
+        throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, "EurekaCoin is downloading blocks...");
 
     static unsigned int nTransactionsUpdatedLast;
 
@@ -889,7 +889,7 @@ static UniValue estimatesmartfee(const JSONRPCRequest& request)
             "       \"CONSERVATIVE\"\n"
             "\nResult:\n"
             "{\n"
-            "  \"feerate\" : x.x,     (numeric, optional) estimate fee-per-kilobyte (in QTUM)\n"
+            "  \"feerate\" : x.x,     (numeric, optional) estimate fee-per-kilobyte (in EUREKACOIN)\n"
             "  \"errors\": [ str... ] (json array of strings, optional) Errors encountered during processing\n"
             "  \"blocks\" : n         (numeric) block number where estimate was found\n"
             "}\n"

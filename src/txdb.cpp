@@ -23,7 +23,7 @@ static const char DB_COINS = 'c';
 static const char DB_BLOCK_FILES = 'f';
 static const char DB_BLOCK_INDEX = 'b';
 
-////////////////////////////////////////// // qtum
+////////////////////////////////////////// // eurekacoin
 static const char DB_HEIGHTINDEX = 'h';
 static const char DB_STAKEINDEX = 's';
 //////////////////////////////////////////
@@ -251,7 +251,7 @@ bool CBlockTreeDB::ReadFlag(const std::string &name, bool &fValue) {
     return true;
 }
 
-/////////////////////////////////////////////////////// // qtum
+/////////////////////////////////////////////////////// // eurekacoin
 bool CBlockTreeDB::WriteHeightIndex(const CHeightTxIndexKey &heightIndex, const std::vector<uint256>& hash) {
     CDBBatch batch(*this);
     batch.Write(std::make_pair(DB_HEIGHTINDEX, heightIndex), hash);
@@ -452,11 +452,11 @@ bool CBlockTreeDB::LoadBlockIndexGuts(const Consensus::Params& consensusParams, 
                 pindexNew->nMoneySupply   = diskindex.nMoneySupply;
                 pindexNew->nStatus        = diskindex.nStatus;
                 pindexNew->nTx            = diskindex.nTx;
-                pindexNew->hashStateRoot  = diskindex.hashStateRoot; // qtum
-                pindexNew->hashUTXORoot   = diskindex.hashUTXORoot; // qtum
+                pindexNew->hashStateRoot  = diskindex.hashStateRoot; // eurekacoin
+                pindexNew->hashUTXORoot   = diskindex.hashUTXORoot; // eurekacoin
                 pindexNew->nStakeModifier = diskindex.nStakeModifier;
                 pindexNew->prevoutStake   = diskindex.prevoutStake;
-                pindexNew->vchBlockSig    = diskindex.vchBlockSig; // qtum
+                pindexNew->vchBlockSig    = diskindex.vchBlockSig; // eurekacoin
 
                 if (!CheckIndexProof(*pindexNew, Params().GetConsensus()))
                     return error("%s: CheckIndexProof failed: %s", __func__, pindexNew->ToString());

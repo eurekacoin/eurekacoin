@@ -10,7 +10,7 @@ from test_framework.util import (
     assert_equal,
     assert_raises_rpc_error,
 )
-from test_framework.qtumconfig import *
+from test_framework.eurekacoinconfig import *
 
 class ImportPrunedFundsTest(BitcoinTestFramework):
     def set_test_params(self):

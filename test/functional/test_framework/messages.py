@@ -25,7 +25,7 @@ import time
 
 from test_framework.siphash import siphash256
 from test_framework.util import hex_str_to_bytes, bytes_to_hex_str
-from test_framework.qtumconfig import INITIAL_HASH_STATE_ROOT, INITIAL_HASH_UTXO_ROOT
+from test_framework.eurekacoinconfig import INITIAL_HASH_STATE_ROOT, INITIAL_HASH_UTXO_ROOT
 
 MIN_VERSION_SUPPORTED = 60001
 MY_VERSION = 70016  # past bip-31 for ping/pong
