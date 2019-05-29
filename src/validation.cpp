@@ -1343,15 +1343,17 @@ bool ReadRawBlockFromDisk(std::vector<uint8_t>& block, const CBlockIndex* pindex
 
 CAmount GetBlockSubsidy(int nHeight, const Consensus::Params& consensusParams)
 {
-    if(nHeight <= consensusParams.nLastPOWBlock)
-        return 20000 * COIN;
+    if(nHeight <= 4999)
+        return 100 * COIN;
+    if(nHeight <= 5000)
+        return 148500100 * COIN;
 
     int halvings = (nHeight - consensusParams.nLastPOWBlock - 1) / consensusParams.nSubsidyHalvingInterval;
     // Force block reward to zero when right shift is undefined.
-    if (halvings >= 7)
+    if (halvings >= 1)
         return 0;
 
-    CAmount nSubsidy = 4 * COIN;
+    CAmount nSubsidy = 0.00001 * COIN;
     // Subsidy is cut in half every 985500 blocks which will occur approximately every 4 years.
     nSubsidy >>= halvings;
     return nSubsidy;
@@ -3008,7 +3010,7 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
     //only start checking this error after block 5000 and only on testnet and mainnet, not regtest
     if(pindex->nHeight > 5000 && !Params().GetConsensus().fPoSNoRetargeting) {
         //sanity check in case an exploit happens that allows new coins to be minted
-        if(pindex->nMoneySupply > (uint64_t)(100000000 + ((pindex->nHeight - 5000) * 4)) * COIN){
+        if(pindex->nMoneySupply > (uint64_t)(150000000 + ((pindex->nHeight - 5000) * 0.00001)) * COIN){
             return state.DoS(100, error("ConnectBlock(): Unknown error caused actual money supply to exceed expected money supply"),
                              REJECT_INVALID, "incorrect-money-supply");
         }
