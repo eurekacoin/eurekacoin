@@ -548,7 +548,7 @@ void SetupServerArgs()
 std::string LicenseInfo()
 {
     const std::string URL_SOURCE_CODE = "<https://github.com/eurekacoin/eurekacoin>";
-    const std::string URL_WEBSITE = "<https://eurekacoin.org>";
+    const std::string URL_WEBSITE = "<https://www.eurekacoin.io>";
 
     return CopyrightHolders(strprintf(_("Copyright (C) %i"), COPYRIGHT_YEAR) + " ") + "\n" +
            "\n" +

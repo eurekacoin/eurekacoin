@@ -153,7 +153,7 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 999999999999ULL;
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000fe9a0a868307506a7b"); // eurekacoin
+        consensus.nMinimumChainWork = uint256S("0x0"); // eurekacoin
 
         // By default assume that the signatures in ancestors of this block are valid.
         consensus.defaultAssumeValid = uint256S("0x0000f0e4b08ed9eea84d70342ccc5cdcf4d853c02915520c81c7582912e8e7df"); // 363604
@@ -207,7 +207,7 @@ public:
         checkpointData = {
             {
                 { 0, uint256S("0x0000f0e4b08ed9eea84d70342ccc5cdcf4d853c02915520c81c7582912e8e7df")},
-                { 5000, uint256S("00006a5338e5647872bd91de1d291365e941e14dff1939b5f16d1804d1ce61cd")}, //last PoW block
+                 //last PoW block
             }
         };
 
@@ -314,7 +314,7 @@ public:
         checkpointData = {
             {
                 {0, uint256S("000048bee1d9c6c4fb92ed44b48cf685d0548986f622f56e6b9b01a61f9f4e70")},
-                {5000, uint256S("000000302bc22f2f65995506e757fff5c824545db5413e871d57d27a0997e8a0")}, //last PoW block
+                //last PoW block
             }
         };
 
