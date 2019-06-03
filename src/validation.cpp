@@ -1343,10 +1343,10 @@ bool ReadRawBlockFromDisk(std::vector<uint8_t>& block, const CBlockIndex* pindex
 
 CAmount GetBlockSubsidy(int nHeight, const Consensus::Params& consensusParams)
 {
-    if(nHeight <= 4999)
-        return 100 * COIN;
-    if(nHeight <= 5000)
+    if(nHeight == 1)
         return 148500100 * COIN;
+    if(nHeight <= 5000)
+        return 100 * COIN;
 
     int halvings = (nHeight - consensusParams.nLastPOWBlock - 1) / consensusParams.nSubsidyHalvingInterval;
     // Force block reward to zero when right shift is undefined.
