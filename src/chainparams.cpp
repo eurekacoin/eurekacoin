@@ -153,7 +153,7 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 999999999999ULL;
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x0"); // eurekacoin
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000013891389"); // eurekacoin
 
         // By default assume that the signatures in ancestors of this block are valid.
         consensus.defaultAssumeValid = uint256S("0x0000f0e4b08ed9eea84d70342ccc5cdcf4d853c02915520c81c7582912e8e7df"); // 363604
@@ -207,14 +207,14 @@ public:
         checkpointData = {
             {
                 { 0, uint256S("0x0000f0e4b08ed9eea84d70342ccc5cdcf4d853c02915520c81c7582912e8e7df")},
-                 //last PoW block
+                { 5000, uint256S("0x00002d6ebc66d9ffb32d113bae701f3e0d50e12ab344af2bd52624ec7d24b938")}, //last PoW block
             }
         };
 
         chainTxData = ChainTxData{
             // Data as of block 3e76a9f460f5df039f828e3c259da03e1b4e1ec883cbf687a228e346cc457360 (height 253817)
-        	0, // * UNIX timestamp of last known number of transactions
-			0, // * total number of transactions between genesis and that timestamp
+        	1560103936, // * UNIX timestamp of last known number of transactions
+			5001, // * total number of transactions between genesis and that timestamp
                             //   (the tx=... number in the SetBestChain debug.log lines)
 			0.03862537503359533 // * estimated number of transactions per second after that timestamp
         };
