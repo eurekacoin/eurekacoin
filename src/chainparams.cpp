@@ -123,7 +123,7 @@ class CMainParams : public CChainParams {
 public:
     CMainParams() {
         strNetworkID = "main";
-        consensus.nSubsidyHalvingInterval = 100000005000; // eurekacoin halving every 4 years
+        consensus.nSubsidyHalvingInterval = 95000005000; // eurekacoin halving every 4 years
         consensus.BIP16Exception = uint256S("0x0000f0e4b08ed9eea84d70342ccc5cdcf4d853c02915520c81c7582912e8e7df");
         consensus.BIP34Height = 0;
         consensus.BIP34Hash = uint256S("0x0000f0e4b08ed9eea84d70342ccc5cdcf4d853c02915520c81c7582912e8e7df");
@@ -239,7 +239,7 @@ class CTestNetParams : public CChainParams {
 public:
     CTestNetParams() {
         strNetworkID = "test";
-        consensus.nSubsidyHalvingInterval = 100000005000; // eurekacoin halving every 4 years
+        consensus.nSubsidyHalvingInterval = 95000005000; // eurekacoin halving every 4 years
         consensus.BIP16Exception = uint256S("0x000048bee1d9c6c4fb92ed44b48cf685d0548986f622f56e6b9b01a61f9f4e70");
         consensus.BIP34Height = 0;
         consensus.BIP34Hash = uint256S("0x000048bee1d9c6c4fb92ed44b48cf685d0548986f622f56e6b9b01a61f9f4e70");
@@ -345,7 +345,7 @@ class CRegTestParams : public CChainParams {
 public:
     CRegTestParams() {
         strNetworkID = "regtest";
-        consensus.nSubsidyHalvingInterval = 100000005000;
+        consensus.nSubsidyHalvingInterval = 95000005000;
         consensus.BIP16Exception = uint256S("0x559d5c38159650dcf707102aff55b55b373e3c0759b904addff4ae82bafbd1a6");
         consensus.BIP34Height = 0; // BIP34 has not activated on regtest (far in the future so block v1 are not rejected in tests) // activate for eurekacoin
         consensus.BIP34Hash = uint256S("0x559d5c38159650dcf707102aff55b55b373e3c0759b904addff4ae82bafbd1a6");
