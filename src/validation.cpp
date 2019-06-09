@@ -3010,7 +3010,7 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
     //only start checking this error after block 5000 and only on testnet and mainnet, not regtest
     if(pindex->nHeight > 5000 && !Params().GetConsensus().fPoSNoRetargeting) {
         //sanity check in case an exploit happens that allows new coins to be minted
-        if(pindex->nMoneySupply > (uint64_t)(149999900 + ((pindex->nHeight - 5000) * 0.00001)) * COIN){
+        if(pindex->nMoneySupply > (uint64_t)(149000000 + ((pindex->nHeight - 5000) * 0.00001)) * COIN){
             return state.DoS(100, error("ConnectBlock(): Unknown error caused actual money supply to exceed expected money supply"),
                              REJECT_INVALID, "incorrect-money-supply");
         }
