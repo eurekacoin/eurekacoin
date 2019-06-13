@@ -123,7 +123,7 @@ class CMainParams : public CChainParams {
 public:
     CMainParams() {
         strNetworkID = "main";
-        consensus.nSubsidyHalvingInterval = 95000005000; // eurekacoin halving every 4 years
+        consensus.nSubsidyHalvingInterval = 19005000; // eurekacoin halving every 4 years
         consensus.BIP16Exception = uint256S("0x00004dded9d8ba7e5f23c0c1d85d0d2683e920fa0c38bb77fb7d5e2466777a8d");
         consensus.BIP34Height = 0;
         consensus.BIP34Hash = uint256S("0x00004dded9d8ba7e5f23c0c1d85d0d2683e920fa0c38bb77fb7d5e2466777a8d");
@@ -239,7 +239,7 @@ class CTestNetParams : public CChainParams {
 public:
     CTestNetParams() {
         strNetworkID = "test";
-        consensus.nSubsidyHalvingInterval = 95000005000; // eurekacoin halving every 4 years
+        consensus.nSubsidyHalvingInterval = 19005000; // eurekacoin halving every 4 years
         consensus.BIP16Exception = uint256S("0x000003e82da9255b78c73a193d6dfde7e7f78251b437e6771a1f646c42cb54c9");
         consensus.BIP34Height = 0;
         consensus.BIP34Hash = uint256S("0x000003e82da9255b78c73a193d6dfde7e7f78251b437e6771a1f646c42cb54c9");
