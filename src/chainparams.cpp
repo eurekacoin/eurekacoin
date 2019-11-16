@@ -153,10 +153,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 999999999999ULL;
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000000029b679df8387ec44"); // 7472 eurekacoin
+        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000000029b679df8387ec44"); // 207797 eurekacoin
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0xeb21e5599428aaa9af43055d636c52cdb17ba5a08871e944379f4ac81e147dbd"); // 7472
+        consensus.defaultAssumeValid = uint256S("0x55a88fea31fe35a615971ea3dbd9aec54026c7a4006d61b0461e182752aa856b"); // 207797
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
