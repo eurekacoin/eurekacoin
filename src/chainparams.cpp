@@ -153,10 +153,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 999999999999ULL;
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000000029b679df8387ec44"); // 207797 eurekacoin
+        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000001011c19b2d1e9ee70"); // 296296 eurekacoin
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x55a88fea31fe35a615971ea3dbd9aec54026c7a4006d61b0461e182752aa856b"); // 207797
+        consensus.defaultAssumeValid = uint256S("0x7060e91122d009ac489030259fdf2225356885d1b9b14861db4572dc6f18621a"); // 296296
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -210,13 +210,14 @@ public:
                 { 5000, uint256S("0x00001021e19fae84891557082867a736bb3ea68498bc52ce2a8eeda63271c84f")}, //last PoW block
                 { 7472, uint256S("0xeb21e5599428aaa9af43055d636c52cdb17ba5a08871e944379f4ac81e147dbd")}, // 7472
                 { 207797, uint256S("0x55a88fea31fe35a615971ea3dbd9aec54026c7a4006d61b0461e182752aa856b")}, // 207797
+                { 296296, uint256S("0x7060e91122d009ac489030259fdf2225356885d1b9b14861db4572dc6f18621a")}, // 296296
             }
         };
 
         chainTxData = ChainTxData{
             // Data as of block 3e76a9f460f5df039f828e3c259da03e1b4e1ec883cbf687a228e346cc457360 (height 253817)
-        	1571347728, // * UNIX timestamp of last known number of transactions
-			412155, // * total number of transactions between genesis and that timestamp
+        	1574109584, // * UNIX timestamp of last known number of transactions
+			590820, // * total number of transactions between genesis and that timestamp
                             //   (the tx=... number in the SetBestChain debug.log lines)
 			0.03862537503359533 // * estimated number of transactions per second after that timestamp
         };
