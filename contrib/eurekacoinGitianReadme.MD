@@ -2,7 +2,7 @@
 
 ```
 
-export SIGNER=Bago213
+export SIGNER=erkdev
 export VERSION=0.17.5
 
 ```
